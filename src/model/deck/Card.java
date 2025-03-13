@@ -1,4 +1,4 @@
-package model.Deck; // Declares that this class belongs to the model.Deck package
+package model.deck; // Declares that this class belongs to the model.Deck package
 
 import model.PlayerColor;
 

@@ -1,8 +1,5 @@
 import model.PawnsBoardModel;
-import model.cell.Cell;
-import model.cell.EmptyCell;
-import model.cell.ScoringCell;
-import model.Deck.Card;
+import model.deck.Card;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

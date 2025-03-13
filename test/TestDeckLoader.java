@@ -1,8 +1,8 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import model.Deck.DeckLoader;
-import model.Deck.Card;
+import model.deck.DeckLoader;
+import model.deck.Card;
 
 import java.io.FileNotFoundException;
 import java.util.List;

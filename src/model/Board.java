@@ -1,7 +1,7 @@
 package model;
 
 import model.cell.Cell;
-import model.Deck.Card;
+import model.deck.Card;
 
 /**
  * This interface represents the board for the game. The board is a 2D array.

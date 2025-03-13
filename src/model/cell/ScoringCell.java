@@ -1,7 +1,5 @@
 package model.cell;
 
-import model.Deck.Card;
-
 public class ScoringCell implements Cell {
   private int score;
 

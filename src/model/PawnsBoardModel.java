@@ -1,7 +1,7 @@
 package model;
 
 import model.cell.Cell;
-import model.Deck.Card;
+import model.deck.Card;
 import model.cell.EmptyCell;
 import model.cell.ScoringCell;
 

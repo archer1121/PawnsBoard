@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch initial commit">
-      <change afterPath="$PROJECT_DIR$/test/TestPawnsBoardTextualView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PawnsBoardTextualView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PawnsBoardTextualView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Deck/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/deck/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Deck/DeckLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/deck/DeckLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/cell/CardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/CardCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/cell/ScoringCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/ScoringCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestCardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestCardCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestDeckLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestDeckLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestPawnsBoardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestPawnsBoardModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +60,7 @@
     "JUnit.TestPawnGroupCell.executor": "Run",
     "JUnit.TestPawnsBoardModel.executor": "Run",
     "JUnit.TestPawnsBoardModel.testBoardDimensions.executor": "Run",
+    "JUnit.TestPawnsBoardModel.testBoardInitializationWithMinimalSize.executor": "Run",
     "JUnit.TestPawnsBoardModel.testPlaceCardOnEmptyCell.executor": "Run",
     "JUnit.TestPawnsBoardModel.testPlaceCardOnOccupiedCell.executor": "Run",
     "JUnit.TestPawnsBoardModel.testPlaceCardOnScoringCell.executor": "Run",
@@ -154,7 +162,7 @@
       <updated>1741765236529</updated>
       <workItem from="1741765237538" duration="3102000" />
       <workItem from="1741894719329" duration="4231000" />
-      <workItem from="1741904826758" duration="2013000" />
+      <workItem from="1741904826758" duration="2923000" />
     </task>
     <servers />
   </component>
