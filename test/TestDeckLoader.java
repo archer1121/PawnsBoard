@@ -1,39 +1,109 @@
-// Importing necessary classes
-import model.Deck.Card;        // Importing the Card class from the model.Deck package
-import model.Deck.DeckLoader;  // Importing the DeckLoader class from the model.Deck package
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
-import java.io.FileNotFoundException; // Importing exception handling for file operations
-import java.util.List;                // Importing List for storing a collection of cards
+import model.Deck.DeckLoader;
+import model.Deck.Card;
 
-/**
- * This class is used to test the DeckLoader functionality.
- * It attempts to load a deck of cards from a configuration file
- * and prints the loaded cards to the console.
- */
-public class TestDeckLoader {
+import java.io.FileNotFoundException;
+import java.util.List;
 
-  /**
-   * The main method that executes the test.
-   * It loads a deck of cards from the specified file and prints them.
-   *
-   * @param args Command-line arguments (not used in this program)
-   */
-  public static void main(String[] args) {
+class TestDeckLoader {
+
+  // 1. Test for valid deck
+  @Test
+  void testValidDeck() {
     try {
-      // Load the deck of cards from the given configuration file
-      List<Card> deck = DeckLoader.loadDeck("docs/deck.config");
-
-      // Iterate through the loaded deck and print each card
-      for (Card card : deck) {
-        System.out.println(card);
-      }
-
+      List<Card> deck = DeckLoader.loadDeck("docs/valid_deck.config");
+      assertEquals(3, deck.size(), "Loaded deck should have 3 cards.");
     } catch (FileNotFoundException e) {
-      // Handles the case where the configuration file is not found
-      System.err.println("Config file not found: " + e.getMessage());
-    } catch (IllegalArgumentException e) {
-      // Handles errors in the configuration file format or content
-      System.err.println("Error in config file: " + e.getMessage());
+      fail("File not found: " + e.getMessage());
+    }
+  }
+
+  @Test
+  void testValidDeckContent() {
+    try {
+      List<Card> deck = DeckLoader.loadDeck("docs/valid_deck.config");
+      Card card = deck.get(0);
+      assertEquals("Fireball", card.getName());
+      assertEquals(3, card.getCost());
+      assertEquals(5, card.getValue());
+    } catch (FileNotFoundException e) {
+      fail("File not found: " + e.getMessage());
+    }
+  }
+
+  // 2. Test for invalid metadata (missing cost or value)
+  @Test
+  void testInvalidMetadata() {
+    try {
+      List<Card> deck = DeckLoader.loadDeck("docs/invalid_metadata.config");
+      assertEquals(1, deck.size(), "Only valid cards should be loaded.");
+    } catch (FileNotFoundException e) {
+      fail("File not found: " + e.getMessage());
+    }
+  }
+
+  // 3. Test for missing 'C' in grid
+  @Test
+  void testMissingCInGrid() {
+    try {
+      List<Card> deck = DeckLoader.loadDeck("docs/missing_C_in_grid.config");
+      assertTrue(deck.isEmpty(), "Deck should be empty due to missing 'C' in the grid.");
+    } catch (FileNotFoundException e) {
+      fail("File not found: " + e.getMessage());
+    }
+  }
+
+  @Test
+  void testMissingCInGridSkipping() {
+    try {
+      List<Card> deck = DeckLoader.loadDeck("docs/missing_C_in_grid.config");
+      assertEquals(0, deck.size(), "Deck should not contain cards due to missing 'C' at (2,2).");
+    } catch (FileNotFoundException e) {
+      fail("File not found: " + e.getMessage());
+    }
+  }
+
+  // 4. Test for incomplete grid
+  @Test
+  void testIncompleteGrid() {
+    try {
+      List<Card> deck = DeckLoader.loadDeck("docs/incomplete_grid.config");
+      assertEquals(0, deck.size(), "Deck should have 1 valid card.");
+    } catch (FileNotFoundException e) {
+      fail("File not found: " + e.getMessage());
+    }
+  }
+
+  @Test
+  void testIncompleteGridSkipping() {
+    try {
+      List<Card> deck = DeckLoader.loadDeck("docs/incomplete_grid.config");
+      assertTrue(deck.isEmpty(), "Incomplete cards should be skipped.");
+    } catch (FileNotFoundException e) {
+      fail("File not found: " + e.getMessage());
+    }
+  }
+
+  // 5. Test for empty deck
+  @Test
+  void testEmptyDeck() {
+    try {
+      List<Card> deck = DeckLoader.loadDeck("docs/empty_deck.config");
+      assertTrue(deck.isEmpty(), "Deck should be empty.");
+    } catch (FileNotFoundException e) {
+      fail("File not found: " + e.getMessage());
+    }
+  }
+
+  @Test
+  void testEmptyDeckSkipping() {
+    try {
+      List<Card> deck = DeckLoader.loadDeck("docs/empty_deck.config");
+      assertEquals(0, deck.size(), "Deck should have no cards.");
+    } catch (FileNotFoundException e) {
+      fail("File not found: " + e.getMessage());
     }
   }
 }
