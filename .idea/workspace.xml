@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch added workspace xml to the gitignore too">
-      <change afterPath="$PROJECT_DIR$/src/model/PlayerColor.java" afterDir="false" />
+    <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch initial commit">
+      <change afterPath="$PROJECT_DIR$/PawnsBoard.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PawnsBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Deck/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Deck/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/cell/PawnGroupCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/PawnGroupCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PawnsBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +20,6 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -55,7 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "stephen",
     "jdk.selected.JAVA_MODULE": "11",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/aidan_ypururn/OneDrive/Documents/School/Spring_2025/OOD/PawnsBoard",
@@ -75,7 +74,14 @@
       <recent name="C:\Users\aidan_ypururn\OneDrive\Documents\School\Spring_2025\OOD\PawnsBoard\src\model\Deck" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestDeckLoader">
+  <component name="RunManager" selected="Application.PawnsBoard">
+    <configuration name="PawnsBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PawnsBoard" />
+      <module name="PawnsBoard" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestDeckLoader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PawnsBoard" />
       <option name="PACKAGE_NAME" value="" />
@@ -115,23 +121,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDeckLoader.testInvalidMetadataSkipping" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PawnsBoard" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestDeckLoader" />
-      <option name="METHOD_NAME" value="testInvalidMetadataSkipping" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PawnsBoard" />
         <item itemvalue="JUnit.TestDeckLoader" />
         <item itemvalue="JUnit.TestDeckLoader.testIncompleteGridSkipping" />
         <item itemvalue="JUnit.TestDeckLoader.testInvalidMetadata" />
         <item itemvalue="JUnit.TestDeckLoader.testIncompleteGrid" />
-        <item itemvalue="JUnit.TestDeckLoader.testInvalidMetadataSkipping" />
       </list>
     </recent_temporary>
   </component>
@@ -146,15 +142,6 @@
       <workItem from="1741765237538" duration="3102000" />
       <workItem from="1741894719329" duration="4231000" />
     </task>
-    <task id="LOCAL-00001" summary="stephen branch added workspace xml to the gitignore too">
-      <option name="closed" value="true" />
-      <created>1741899817248</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1741899817248</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +149,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="stephen branch initial commit" />
-    <MESSAGE value="stephen branch added workspace xml to the gitignore too" />
-    <option name="LAST_COMMIT_MESSAGE" value="stephen branch added workspace xml to the gitignore too" />
+    <option name="LAST_COMMIT_MESSAGE" value="stephen branch initial commit" />
   </component>
 </project>
