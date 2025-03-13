@@ -16,8 +16,9 @@ public class PawnsBoardTextualView {
    */
   public String texualPrint(Board board) {
     Board playingBoard = board.getBoard();
-    for(int row=0; ) {
+    /*for(int row=0; ) {
 
-    }
+    }*/
+    return null;
   }
 }

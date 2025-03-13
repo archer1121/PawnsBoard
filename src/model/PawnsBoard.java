@@ -1,6 +1,7 @@
 package model;
 
 import model.cell.Cell;
+import model.Deck.Card;
 
 public class PawnsBoard implements Board{
   private Cell[][] board;
