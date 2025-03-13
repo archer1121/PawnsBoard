@@ -12,7 +12,7 @@ import model.Deck.Card;
  */
 public interface Board {
 
-  public Board getBoard();
+  public Cell[][] getBoard();
   public int getNumRows();
   public int getNumCols();
 
@@ -32,8 +32,5 @@ public interface Board {
    * @param col starts at index 0
    */
   public void placeCard(Card card, int row, int col);
-
-
-
 
 }

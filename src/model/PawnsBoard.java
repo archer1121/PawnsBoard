@@ -7,8 +7,8 @@ public class PawnsBoard implements Board{
   private Cell[][] board;
 
   @Override
-  public Board getBoard() {
-    return this;
+  public Cell[][] getBoard() {
+    return this.board;
   }
 
   @Override
