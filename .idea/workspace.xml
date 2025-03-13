@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch initial commit">
-      <change afterPath="$PROJECT_DIR$/test/TestCardCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/TestEmptyCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/TestPawnGroupCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/TestPawnsBoardModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/TestScoringCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/TestPawnsBoardTextualView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Deck/DeckLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Deck/DeckLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PawnsBoardTextualView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PawnsBoardTextualView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,10 +52,12 @@
     "JUnit.TestEmptyCell.executor": "Run",
     "JUnit.TestPawnGroupCell.executor": "Run",
     "JUnit.TestPawnsBoardModel.executor": "Run",
+    "JUnit.TestPawnsBoardModel.testBoardDimensions.executor": "Run",
     "JUnit.TestPawnsBoardModel.testPlaceCardOnEmptyCell.executor": "Run",
     "JUnit.TestPawnsBoardModel.testPlaceCardOnOccupiedCell.executor": "Run",
     "JUnit.TestPawnsBoardModel.testPlaceCardOnScoringCell.executor": "Run",
     "JUnit.TestPawnsBoardModel.testPlaceCardOutOfBounds.executor": "Run",
+    "JUnit.TestPawnsBoardTextualView.executor": "Run",
     "JUnit.TestScoringCell.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -89,24 +87,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.TestPawnsBoardModel">
-    <configuration name="TestEmptyCell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PawnsBoard" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestEmptyCell" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestPawnGroupCell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PawnsBoard" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestPawnGroupCell" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestPawnsBoardModel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PawnsBoard" />
       <option name="PACKAGE_NAME" value="" />
@@ -126,6 +106,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestPawnsBoardModel.testBoardInitializationWithMinimalSize" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PawnsBoard" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestPawnsBoardModel" />
+      <option name="METHOD_NAME" value="testBoardInitializationWithMinimalSize" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestPawnsBoardTextualView" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PawnsBoard" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestPawnsBoardTextualView" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestScoringCell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PawnsBoard" />
       <option name="PACKAGE_NAME" value="" />
@@ -138,10 +137,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestPawnsBoardModel" />
+        <item itemvalue="JUnit.TestPawnsBoardModel.testBoardInitializationWithMinimalSize" />
+        <item itemvalue="JUnit.TestPawnsBoardTextualView" />
         <item itemvalue="JUnit.TestPawnsBoardModel.testBoardDimensions" />
         <item itemvalue="JUnit.TestScoringCell" />
-        <item itemvalue="JUnit.TestPawnGroupCell" />
-        <item itemvalue="JUnit.TestEmptyCell" />
       </list>
     </recent_temporary>
   </component>
@@ -155,7 +154,7 @@
       <updated>1741765236529</updated>
       <workItem from="1741765237538" duration="3102000" />
       <workItem from="1741894719329" duration="4231000" />
-      <workItem from="1741904826758" duration="1341000" />
+      <workItem from="1741904826758" duration="2013000" />
     </task>
     <servers />
   </component>

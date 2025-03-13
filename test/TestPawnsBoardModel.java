@@ -42,4 +42,5 @@ public class TestPawnsBoardModel {
     assertEquals(5, board.getNumRows(), "Board should have 5 rows");
     assertEquals(5, board.getNumCols(), "Board should have 5 columns (3 playable + 2 for scoring)");
   }
+
 }
