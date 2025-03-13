@@ -1,6 +1,10 @@
 package model.cell;
 
-public class EmptyCell implements Cell{
+/**
+ * Represents an empty cell on the board.
+ * This class is used to represent spaces on the board that are unoccupied.
+ */
+public class EmptyCell implements Cell {
 
   @Override
   public String textualPrint() {
