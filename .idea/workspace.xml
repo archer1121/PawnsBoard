@@ -4,27 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch initial commit">
-      <change afterPath="$PROJECT_DIR$/docs/empty_deck.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/incomplete_grid.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/invalid_metadata.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/missing_C_in_grid.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hamcrest-core-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-4.13.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.2.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PawnsBoard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PawnsBoard.iml" afterDir="false" />
+    <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch added workspace xml to the gitignore too">
+      <change afterPath="$PROJECT_DIR$/src/model/PlayerColor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/deck.config" beforeDir="false" afterPath="$PROJECT_DIR$/docs/valid_deck.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Deck/DeckLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Deck/DeckLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestDeckLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestDeckLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Deck/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Deck/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/cell/PawnGroupCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/PawnGroupCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +20,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -70,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging stephen",
+    "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "11",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/aidan_ypururn/OneDrive/Documents/School/Spring_2025/OOD/PawnsBoard",
@@ -161,6 +146,15 @@
       <workItem from="1741765237538" duration="3102000" />
       <workItem from="1741894719329" duration="4231000" />
     </task>
+    <task id="LOCAL-00001" summary="stephen branch added workspace xml to the gitignore too">
+      <option name="closed" value="true" />
+      <created>1741899817248</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741899817248</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +162,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="stephen branch initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="stephen branch initial commit" />
+    <MESSAGE value="stephen branch added workspace xml to the gitignore too" />
+    <option name="LAST_COMMIT_MESSAGE" value="stephen branch added workspace xml to the gitignore too" />
   </component>
 </project>

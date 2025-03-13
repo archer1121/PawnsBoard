@@ -1,5 +1,7 @@
 package model.Deck; // Declares that this class belongs to the model.Deck package
 
+import model.PlayerColor;
+
 /**
  * Represents a card in the game, containing attributes such as name, cost, value,
  * and an influence grid that determines its effect.
@@ -12,7 +14,7 @@ public class Card {
   private final int value;          // Value or points the card provides
   private final char[][] influenceGrid; // A grid representing the card's influence pattern
 
-
+  private PlayerColor playerColor;
 
   /**
    * Constructor to initialize a Card object with the given attributes.
@@ -22,11 +24,12 @@ public class Card {
    * @param value The value associated with the card
    * @param influenceGrid A 2D character array representing the card's influence pattern
    */
-  public Card(String name, int cost, int value, char[][] influenceGrid) {
+  public Card(String name, int cost, int value, char[][] influenceGrid, PlayerColor playerColor) {
     this.name = name;
     this.cost = cost;
     this.value = value;
     this.influenceGrid = influenceGrid;
+    this.playerColor = playerColor;
   }
 
   /**
@@ -73,5 +76,9 @@ public class Card {
     }
 
     return sb.toString();
+  }
+
+  public PlayerColor getPlayerColor() {
+    return playerColor;
   }
 }
