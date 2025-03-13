@@ -1,6 +1,7 @@
 package model;
 
 import model.cell.Cell;
+import model.Deck.Card;
 
 /**
  * This interface represents the board for the game. The board is a 2D array.
@@ -26,7 +27,7 @@ public interface Board {
 
   /**
    *
-   * @param c is a playing card
+   * @param card is a playing card
    * @param row starts at index 0
    * @param col starts at index 0
    */
