@@ -1,4 +1,4 @@
-package model.Deck; // Declares that this class belongs to the model.Deck package
+package model.Deck;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,7 +17,6 @@ public class DeckLoader {
    * @param filePath The path to the deck configuration file.
    * @return A list of Card objects loaded from the file.
    * @throws FileNotFoundException If the file cannot be found.
-   * @throws IllegalArgumentException If the file contains improperly formatted data.
    */
   public static List<Card> loadDeck(String filePath) throws FileNotFoundException {
     List<Card> deck = new ArrayList<>(); // List to store loaded cards
@@ -26,10 +25,8 @@ public class DeckLoader {
     // Try-with-resources to ensure the scanner is closed automatically
     try (Scanner scanner = new Scanner(file)) {
       while (scanner.hasNextLine()) {
-        // Read next line
-        String line = scanner.nextLine().trim(); // Trim whitespace
-
-        // Skip empty or blank lines
+        // Skip blank lines
+        String line = scanner.nextLine().trim();
         if (line.isEmpty()) {
           continue;
         }
@@ -39,36 +36,50 @@ public class DeckLoader {
 
         // Ensure the metadata is properly formatted (exactly 3 elements)
         if (cardInfo.length != 3) {
-          throw new IllegalArgumentException("Invalid card metadata format.");
+          continue;  // Skip this card due to invalid metadata
         }
 
         String name = cardInfo[0];                   // Card name
-        int cost = Integer.parseInt(cardInfo[1]);    // Card cost
-        int value = Integer.parseInt(cardInfo[2]);   // Card value
+        int cost;
+        int value;
+
+        // Try parsing cost and value and skip the card if invalid
+        try {
+          cost = Integer.parseInt(cardInfo[1]);
+          value = Integer.parseInt(cardInfo[2]);
+        } catch (NumberFormatException e) {
+          continue;  // Skip this card due to invalid cost or value
+        }
 
         // Read the 5x5 influence grid
         char[][] grid = new char[5][5];
+        boolean isValidGrid = true; // Flag to track grid validity
+
         for (int i = 0; i < 5; i++) {
           if (!scanner.hasNextLine()) {
-            throw new IllegalArgumentException("Incomplete grid for card: " + name);
+            isValidGrid = false; // Mark as invalid if not enough grid rows
+            break;
           }
           String row = scanner.nextLine().trim();
 
           // Ensure each row is exactly 5 characters long
           if (row.length() != 5) {
-            throw new IllegalArgumentException("Invalid grid row length.");
+            isValidGrid = false; // Mark as invalid if grid row is too short
+            break;
           }
 
           grid[i] = row.toCharArray();
         }
 
         // Validate the influence grid (ensure 'C' is at position (2,2))
-        if (grid[2][2] != 'C') {
-          throw new IllegalArgumentException("Card " + name + " is missing 'C' at (2,2).");
+        if (isValidGrid && grid[2][2] != 'C') {
+          isValidGrid = false; // Mark as invalid if 'C' is not at (2,2)
         }
 
-        // Add the newly created card to the deck
-        deck.add(new Card(name, cost, value, grid));
+        // If the card is valid, add it to the deck
+        if (isValidGrid) {
+          deck.add(new Card(name, cost, value, grid));
+        }
       }
     }
 

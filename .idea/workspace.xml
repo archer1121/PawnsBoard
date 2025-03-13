@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/deck.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/empty_deck.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/incomplete_grid.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/invalid_metadata.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/missing_C_in_grid.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/valid_deck.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PawnsBoard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PawnsBoard.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Deck/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Deck/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/deck.config" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Deck/DeckLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Deck/DeckLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PawnsBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PawnsBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/cell/ScoringCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/ScoringCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PawnsBoardTextualView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PawnsBoardTextualView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/TestDeckLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestDeckLoader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +47,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.TestDeckLoader.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
+    "JUnit.TestDeckLoader.executor": "Run",
+    "JUnit.TestDeckLoader.testIncompleteGrid.executor": "Run",
+    "JUnit.TestDeckLoader.testIncompleteGridSkipping.executor": "Run",
+    "JUnit.TestDeckLoader.testInvalidMetadata.executor": "Run",
+    "JUnit.TestDeckLoader.testInvalidMetadataSkipping.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -70,23 +80,63 @@
       <recent name="C:\Users\aidan_ypururn\OneDrive\Documents\School\Spring_2025\OOD\PawnsBoard\src\model\Deck" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="TestDeckLoader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestDeckLoader" />
+  <component name="RunManager" selected="JUnit.TestDeckLoader">
+    <configuration name="TestDeckLoader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PawnsBoard" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDeckLoader" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDeckLoader.testIncompleteGrid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PawnsBoard" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDeckLoader" />
+      <option name="METHOD_NAME" value="testIncompleteGrid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDeckLoader.testIncompleteGridSkipping" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PawnsBoard" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDeckLoader" />
+      <option name="METHOD_NAME" value="testIncompleteGridSkipping" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDeckLoader.testInvalidMetadata" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PawnsBoard" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDeckLoader" />
+      <option name="METHOD_NAME" value="testInvalidMetadata" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDeckLoader.testInvalidMetadataSkipping" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PawnsBoard" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDeckLoader" />
+      <option name="METHOD_NAME" value="testInvalidMetadataSkipping" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestDeckLoader" />
+        <item itemvalue="JUnit.TestDeckLoader" />
+        <item itemvalue="JUnit.TestDeckLoader.testIncompleteGridSkipping" />
+        <item itemvalue="JUnit.TestDeckLoader.testInvalidMetadata" />
+        <item itemvalue="JUnit.TestDeckLoader.testIncompleteGrid" />
+        <item itemvalue="JUnit.TestDeckLoader.testInvalidMetadataSkipping" />
       </list>
     </recent_temporary>
   </component>
@@ -99,7 +149,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741765236529</updated>
       <workItem from="1741765237538" duration="3102000" />
-      <workItem from="1741894719329" duration="2036000" />
+      <workItem from="1741894719329" duration="4231000" />
     </task>
     <servers />
   </component>
