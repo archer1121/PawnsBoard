@@ -7,8 +7,6 @@
     <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch initial commit">
       <change afterPath="$PROJECT_DIR$/PawnsBoard.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/PawnsBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PawnsBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "stephen",
+    "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "11",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/aidan_ypururn/OneDrive/Documents/School/Spring_2025/OOD/PawnsBoard",
@@ -142,12 +140,22 @@
       <workItem from="1741765237538" duration="3102000" />
       <workItem from="1741894719329" duration="4231000" />
     </task>
+    <task id="LOCAL-00001" summary="stephen branch initial commit">
+      <option name="closed" value="true" />
+      <created>1741904025789</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741904025789</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="main class in pawns board and some refactoring in the pawnsboardmodel" />
     <MESSAGE value="stephen branch initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="stephen branch initial commit" />
   </component>
