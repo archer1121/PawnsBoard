@@ -1,5 +1,7 @@
 package model.Deck;
 
+import model.PlayerColor;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -78,7 +80,7 @@ public class DeckLoader {
 
         // If the card is valid, add it to the deck
         if (isValidGrid) {
-          deck.add(new Card(name, cost, value, grid));
+          deck.add(new Card(name, cost, value, grid, PlayerColor.RED));
         }
       }
     }

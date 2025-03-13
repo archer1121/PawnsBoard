@@ -1,13 +1,14 @@
 package model.cell;
+import model.PlayerColor;
 
 public class PawnGroupCell implements Cell {
 
   private int numPawns;
-  private PawnColor pawnColor;
+  private PlayerColor pawnColor;
 
-  private enum PawnColor {RED, BLUE}
 
-  public PawnGroupCell(int numPawns, PawnColor pawnColor) {
+
+  public PawnGroupCell(int numPawns, PlayerColor pawnColor) {
     this.numPawns = numPawns;
     this.pawnColor = pawnColor;
   }
