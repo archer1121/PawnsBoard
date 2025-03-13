@@ -5,26 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch initial commit">
-      <change afterPath="$PROJECT_DIR$/docs/empty_deck.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/incomplete_grid.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/invalid_metadata.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/missing_C_in_grid.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hamcrest-core-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-4.13.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.2.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PawnsBoard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PawnsBoard.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PawnsBoard.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PawnsBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/deck.config" beforeDir="false" afterPath="$PROJECT_DIR$/docs/valid_deck.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Deck/DeckLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Deck/DeckLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestDeckLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestDeckLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PawnsBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging stephen",
+    "git-widget-placeholder": "stephen",
     "jdk.selected.JAVA_MODULE": "11",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/aidan_ypururn/OneDrive/Documents/School/Spring_2025/OOD/PawnsBoard",
@@ -90,7 +74,14 @@
       <recent name="C:\Users\aidan_ypururn\OneDrive\Documents\School\Spring_2025\OOD\PawnsBoard\src\model\Deck" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestDeckLoader">
+  <component name="RunManager" selected="Application.PawnsBoard">
+    <configuration name="PawnsBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PawnsBoard" />
+      <module name="PawnsBoard" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestDeckLoader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PawnsBoard" />
       <option name="PACKAGE_NAME" value="" />
@@ -130,23 +121,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDeckLoader.testInvalidMetadataSkipping" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PawnsBoard" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestDeckLoader" />
-      <option name="METHOD_NAME" value="testInvalidMetadataSkipping" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PawnsBoard" />
         <item itemvalue="JUnit.TestDeckLoader" />
         <item itemvalue="JUnit.TestDeckLoader.testIncompleteGridSkipping" />
         <item itemvalue="JUnit.TestDeckLoader.testInvalidMetadata" />
         <item itemvalue="JUnit.TestDeckLoader.testIncompleteGrid" />
-        <item itemvalue="JUnit.TestDeckLoader.testInvalidMetadataSkipping" />
       </list>
     </recent_temporary>
   </component>
