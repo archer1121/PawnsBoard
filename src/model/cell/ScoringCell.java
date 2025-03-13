@@ -1,11 +1,18 @@
 package model.cell;
 
 public class ScoringCell implements Cell {
+  private int score;
 
-  private Card card;
+  public ScoringCell(int score) {
+    this.score = score;
+  }
 
   @Override
   public String textualPrint() {
-    return null;
+    return Integer.toString(this.score);
+  }
+
+  public void updateScoreCell(int newScore) {
+    this.score = newScore;
   }
 }
