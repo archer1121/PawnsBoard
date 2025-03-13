@@ -12,6 +12,8 @@ public class Card {
   private final int value;          // Value or points the card provides
   private final char[][] influenceGrid; // A grid representing the card's influence pattern
 
+
+
   /**
    * Constructor to initialize a Card object with the given attributes.
    *
