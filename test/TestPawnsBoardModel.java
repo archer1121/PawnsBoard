@@ -1,13 +1,13 @@
 import model.PawnsBoardModel;
-import model.cell.Cell;
-import model.cell.EmptyCell;
-import model.cell.ScoringCell;
-import model.Deck.Card;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for PawnsBoardModel.
+ * This class contains unit tests for testing the functionality of the PawnsBoardModel class.
+ */
 public class TestPawnsBoardModel {
 
   private PawnsBoardModel board;
@@ -16,21 +16,6 @@ public class TestPawnsBoardModel {
   public void setUp() {
     // Initialize board before each test
     board = new PawnsBoardModel();
-  }
-
-  @Test
-  public void testPlaceCard() {
-    // Test the placeCard method (though not yet implemented)
-    // Create a mock Card object
-    Card card = new Card("Test Card", 5, 10, new char[5][5], model.PlayerColor.RED);
-
-    // Try placing the card at position (1, 2) on the board
-    board.placeCard(card, 1, 2);
-
-    // Assuming placeCard logic will be implemented later, here we would check
-    // if the card is placed correctly (which would be done once the method is implemented).
-    // For now, we check that the board does not throw exceptions when calling the method.
-    // No assertion, as placeCard is not yet implemented, but the test ensures no crash.
   }
 
   @Test

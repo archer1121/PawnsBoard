@@ -3,17 +3,32 @@ package view;
 import model.Board;
 import model.cell.Cell;
 
+/**
+ * This class provides a textual representation of the PawnsBoard for easy viewing.
+ * The board is printed with scoring columns on both sides and the cells in between.
+ *
+ * <p>
+ * Example output:
+ * [s] [] [] [] [] [] [s]
+ * [s] [] [] [] [] [] [s]
+ * [s] [] [] [] [] [] [s]
+ * </p>
+ */
 public class PawnsBoardTextualView {
 
   /**
-   * This method will print out the board in a textual String for easy viewing.
+   * Prints the board in a textual format, including the scoring columns on the sides.
+   * The cells are printed in between the scoring columns.
    *
+   * <p>The output for a 3x5 board might look like this:</p>
+   * <pre>
    * [s] [] [] [] [] [] [s]
    * [s] [] [] [] [] [] [s]
    * [s] [] [] [] [] [] [s]
+   * </pre>
    *
-   * @param board
-   * @return
+   * @param board The board object containing the cells to be printed
+   * @return A string representing the textual print of the board
    */
   public String textualPrint(Board board) {
     // Get the board's 2D array
