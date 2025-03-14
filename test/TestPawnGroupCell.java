@@ -37,7 +37,8 @@ public class TestPawnGroupCell {
   @Test
   public void testTextualPrint() {
     // Ensure textualPrint returns the correct number of pawns as a string
-    assertEquals("3", pawnGroupCell.textualPrint(), "textualPrint should return correct num of pawns");
+    assertEquals("3", pawnGroupCell.textualPrint(),
+            "textualPrint should return correct num of pawns");
   }
 
   /**
@@ -47,6 +48,7 @@ public class TestPawnGroupCell {
   public void testAddPawn() {
     // Add pawns to the group and verify the number of pawns increases correctly
     pawnGroupCell.addPawn(2);
-    assertEquals("5", pawnGroupCell.textualPrint(), "textualPrint should reflect new number of pawns");
+    assertEquals("5", pawnGroupCell.textualPrint(),
+            "textualPrint should reflect new number of pawns");
   }
 }

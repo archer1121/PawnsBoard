@@ -83,8 +83,7 @@ public class Card {
     sb.append(name).append(" Cost: ").append(cost).append(" Value: ").append(value).append("\n");
 
     // Append each row of the influence grid to the string
-    for (char[] row : influenceGrid)
-    {
+    for (char[] row : influenceGrid) {
       sb.append(new String(row)).append("\n");
     }
 

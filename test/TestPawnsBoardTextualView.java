@@ -65,7 +65,8 @@ public class TestPawnsBoardTextualView {
 
     // Assert that the expected output matches the actual output
     assertEquals(expectedOutput, actualOutput,
-        "Textual print of the board with different sizes should match the expected output.");
+        "Textual print of the board with different sizes " +
+                "should match the expected output.");
   }
 
   /**

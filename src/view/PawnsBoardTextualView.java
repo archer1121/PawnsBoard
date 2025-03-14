@@ -40,7 +40,9 @@ public class PawnsBoardTextualView {
     // Loop through each row in the board
     for (int row = 0; row < board.getNumRows(); row++) {
       for (int col = 0; col < board.getNumCols(); col++) {
-        sb.append(grid[row][col].textualPrint()).append(" "); // Append cell's textual representation
+
+        // Append cell's textual representation
+        sb.append(grid[row][col].textualPrint()).append(" ");
       }
       sb.append("\n");
     }

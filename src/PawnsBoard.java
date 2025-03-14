@@ -6,7 +6,15 @@ import view.PawnsBoardTextualView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This is the runner class with main.
+ */
 public class PawnsBoard {
+
+  /**
+   * The main class for running game at the moment.
+   * @param args standard args for java
+   */
   public static void main(String[] args) {
     // Step 1: Load deck configuration from file
     String deckFilePath = "docs/valid_deck.config";  // Update this path if needed

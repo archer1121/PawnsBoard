@@ -44,12 +44,4 @@ public interface Board {
    */
   public void initBoard(int rows, int cols);
 
-  /**
-   * Places a card at the specified location on the board.
-   *
-   * @param card The playing card to be placed.
-   * @param row The row index (starts at 0).
-   * @param col The column index (starts at 0).
-   */
-
 }
