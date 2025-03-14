@@ -20,7 +20,7 @@ public class TestCardCell {
    */
   @BeforeEach
   public void setUp() {
-    card = new Card("Test Card", 5, 10, new char[5][5], PlayerColor.RED);  // Initialize a simple card
+    card = new Card("Test Card", 5, 10, new char[5][5], PlayerColor.RED);
   }
 
   @Test

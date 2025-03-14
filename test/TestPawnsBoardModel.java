@@ -1,10 +1,13 @@
 import model.PawnsBoardModel;
-import model.deck.Card;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for PawnsBoardModel.
+ * This class contains unit tests for testing the functionality of the PawnsBoardModel class.
+ */
 public class TestPawnsBoardModel {
 
   private PawnsBoardModel board;
@@ -14,7 +17,6 @@ public class TestPawnsBoardModel {
     // Initialize board before each test
     board = new PawnsBoardModel();
   }
-
 
   @Test
   public void testBoardInitializationWithDifferentSizes() {

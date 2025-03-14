@@ -10,6 +10,7 @@ import model.deck.Card;
  * <p>
  * If the board is 3x5, we initialize it to be 3x7 because we need to add scoring blocks
  * on both sides of the row.
+ * </p>
  */
 
 public interface Board {
