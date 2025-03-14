@@ -1,7 +1,6 @@
 package model;
 
 import model.cell.Cell;
-import model.deck.Card;
 
 /**
  * This interface represents the board for the game. The board is a 2D array.
@@ -44,14 +43,5 @@ public interface Board {
    * @param cols The number of playable columns (excluding the scoring columns).
    */
   public void initBoard(int rows, int cols);
-
-  /**
-   * Places a card at the specified location on the board.
-   *
-   * @param card The playing card to be placed.
-   * @param row The row index (starts at 0).
-   * @param col The column index (starts at 0).
-   */
-  public void placeCard(Card card, int row, int col);
 
 }

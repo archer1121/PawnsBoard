@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch initial commit">
+    <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch last commit">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PawnsBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/cell/CardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/CardCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/cell/PawnGroupCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/PawnGroupCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/deck/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/deck/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/PawnsBoardTextualView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PawnsBoardTextualView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestCardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestCardCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/TestPawnGroupCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestPawnGroupCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestPawnsBoardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestPawnsBoardModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestPawnsBoardTextualView.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestPawnsBoardTextualView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +77,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "stephen",
+    "git-widget-placeholder": "Merging main",
     "jdk.selected.JAVA_MODULE": "11",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/aidan_ypururn/OneDrive/Documents/School/Spring_2025/OOD/PawnsBoard",
@@ -160,6 +165,15 @@
       <workItem from="1741894719329" duration="4231000" />
       <workItem from="1741904826758" duration="4798000" />
     </task>
+    <task id="LOCAL-00001" summary="stephen branch last commit">
+      <option name="closed" value="true" />
+      <created>1741912630482</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741912630482</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +181,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="stephen branch initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="stephen branch initial commit" />
+    <MESSAGE value="stephen branch commiting scoring the board changes and readme" />
+    <MESSAGE value="stephen branch last commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="stephen branch last commit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PawnsBoard$TestPawnGroupCell.ic" NAME="TestPawnGroupCell Coverage Results" MODIFIED="1741911257577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

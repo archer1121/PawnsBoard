@@ -14,7 +14,7 @@ public class Card {
   private final int value;          // Value or points the card provides
   private final char[][] influenceGrid; // A grid representing the card's influence pattern
 
-  private PlayerColor playerColor;
+  private final PlayerColor playerColor;
 
   /**
    * Constructor to initialize a Card object with the given attributes.
@@ -68,6 +68,10 @@ public class Card {
     return influenceGrid;
   }
 
+  public PlayerColor getColor() {
+    return this.playerColor;
+  }
+
   /**
    * Converts the card's attributes into a readable string format.
    *
@@ -79,8 +83,7 @@ public class Card {
     sb.append(name).append(" Cost: ").append(cost).append(" Value: ").append(value).append("\n");
 
     // Append each row of the influence grid to the string
-    for (char[] row : influenceGrid)
-    {
+    for (char[] row : influenceGrid) {
       sb.append(new String(row)).append("\n");
     }
 

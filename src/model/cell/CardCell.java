@@ -1,6 +1,8 @@
 package model.cell;
 
 import model.deck.Card;
+import model.PlayerColor;
+
 
 /**
  * Represents a cell on the board that contains a card.
@@ -19,9 +21,18 @@ public class CardCell implements Cell {
     // Card is used locally in textualPrint method
   }
 
+  public int getCardValue() {
+    return this.card.getValue();
+  }
+
+  public PlayerColor getCardColor() {
+    return this.card.getColor();
+  }
+
+
+  // We will accept C for now.
   @Override
   public String textualPrint() {
-    // Since the card is not stored, we'll just return an empty string
-    return "";
+    return "C";
   }
 }

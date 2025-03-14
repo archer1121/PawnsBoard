@@ -33,4 +33,12 @@ public class PawnGroupCell implements Cell {
   public void addPawn(int numToAdd) {
     this.numPawns += numToAdd;
   }
+
+  /**
+   * Returns the color of this pawn group.
+   * @return PlayerColor
+   */
+  public PlayerColor getPawnColor() {
+    return this.pawnColor;
+  }
 }
