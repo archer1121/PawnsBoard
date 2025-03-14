@@ -14,7 +14,7 @@ public class Card {
   private final int value;          // Value or points the card provides
   private final char[][] influenceGrid; // A grid representing the card's influence pattern
 
-  private PlayerColor playerColor;
+  private final PlayerColor playerColor;
 
   /**
    * Constructor to initialize a Card object with the given attributes.
@@ -59,6 +59,10 @@ public class Card {
    * @return A 2D character array representing the card's influence pattern
    */
   public char[][] getInfluenceGrid() { return influenceGrid; }
+
+  public PlayerColor getColor() {
+    return this.playerColor;
+  }
 
   /**
    * Converts the card's attributes into a readable string format.

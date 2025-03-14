@@ -23,18 +23,13 @@ public class PawnsBoardTextualView {
     StringBuilder sb = new StringBuilder();
 
     // Loop through each row in the board
-    for (int row = 0; row < board.getNumRows() - 1; row++) {
-      sb.append("[s] "); // Append left scoring column
-
-      // Loop through each column in the row, starting from 1 (skipping left scoring cell)
-      // and stopping before the last column (right scoring cell)
-      for (int col = 1; col < board.getNumCols() - 1; col++) {
+    for (int row = 0; row < board.getNumRows(); row++) {
+      for (int col = 0; col < board.getNumCols(); col++) {
         sb.append(grid[row][col].textualPrint()).append(" "); // Append cell's textual representation
       }
-
-      sb.append("[s]\n"); // Append right scoring column
+      sb.append("\n");
     }
 
-    return sb.toString();
+    return sb.toString().trim();
   }
 }
