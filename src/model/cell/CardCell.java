@@ -1,5 +1,5 @@
 package model.cell;
-import model.Deck.Card;
+import model.deck.Card;
 import model.PlayerColor;
 
 

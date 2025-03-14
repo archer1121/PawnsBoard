@@ -2,7 +2,7 @@ package model;
 
 import model.cell.CardCell;
 import model.cell.Cell;
-import model.Deck.Card;
+import model.deck.Card;
 import model.cell.EmptyCell;
 import model.cell.PawnGroupCell;
 import model.cell.ScoringCell;
@@ -75,8 +75,9 @@ public class PawnsBoardModel implements Board {
    * @param row The row where the card will be placed (starts at index 0).
    * @param col The column where the card will be placed (starts at index 0).
    */
-  @Override
+
   public void placeCard(Card card, int row, int col) {
+
     this.board[row][col] = new CardCell(card);
   }
 

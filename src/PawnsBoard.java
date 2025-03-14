@@ -1,6 +1,6 @@
 import model.PawnsBoardModel;
-import model.Deck.DeckLoader;
-import model.Deck.Card;
+import model.deck.DeckLoader;
+import model.deck.Card;
 import view.PawnsBoardTextualView;
 
 import java.util.ArrayList;
