@@ -1,4 +1,4 @@
-package model.Deck; // Declares that this class belongs to the model.Deck package
+package model.deck; // Declares that this class belongs to the model.Deck package
 
 import model.PlayerColor;
 
@@ -37,28 +37,36 @@ public class Card {
    *
    * @return The card's name
    */
-  public String getName() { return name; }
+  public String getName() {
+    return name;
+  }
 
   /**
    * Gets the cost of the card.
    *
    * @return The card's cost
    */
-  public int getCost() { return cost; }
+  public int getCost() {
+    return cost;
+  }
 
   /**
    * Gets the value of the card.
    *
    * @return The card's value
    */
-  public int getValue() { return value; }
+  public int getValue() {
+    return value;
+  }
 
   /**
    * Gets the influence grid of the card.
    *
    * @return A 2D character array representing the card's influence pattern
    */
-  public char[][] getInfluenceGrid() { return influenceGrid; }
+  public char[][] getInfluenceGrid() {
+    return influenceGrid;
+  }
 
   /**
    * Converts the card's attributes into a readable string format.
@@ -71,7 +79,8 @@ public class Card {
     sb.append(name).append(" Cost: ").append(cost).append(" Value: ").append(value).append("\n");
 
     // Append each row of the influence grid to the string
-    for (char[] row : influenceGrid) {
+    for (char[] row : influenceGrid)
+    {
       sb.append(new String(row)).append("\n");
     }
 
