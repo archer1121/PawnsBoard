@@ -1,4 +1,3 @@
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import model.deck.DeckLoader;
@@ -6,6 +5,10 @@ import model.deck.Card;
 
 import java.io.FileNotFoundException;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 class TestDeckLoader {
 

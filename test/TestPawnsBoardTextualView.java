@@ -4,13 +4,20 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import view.PawnsBoardTextualView;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * This class tests the behavior of the PawnsBoardTextualView class, ensuring
+ * that the textual representation of the board is correct for different board states.
+ */
 public class TestPawnsBoardTextualView {
 
   private PawnsBoardModel board;
   private PawnsBoardTextualView view;
 
+  /**
+   * Initializes the board and view before each test.
+   */
   @BeforeEach
   public void setUp() {
     // Initialize board and view before each test
@@ -18,6 +25,9 @@ public class TestPawnsBoardTextualView {
     view = new PawnsBoardTextualView();
   }
 
+  /**
+   * Tests the textual print of the board with default initialization (3 rows, 5 columns).
+   */
   @Test
   public void testTextualPrint() {
     // Initialize the board with 3 rows and 5 playable columns
@@ -32,9 +42,13 @@ public class TestPawnsBoardTextualView {
     String actualOutput = view.textualPrint(board);
 
     // Assert that the expected output matches the actual output
-    assertEquals(expectedOutput, actualOutput, "Textual print of the board should match the expected output.");
+    assertEquals(expectedOutput, actualOutput,
+        "Textual print of the board should match the expected output.");
   }
 
+  /**
+   * Tests the textual print of the board with different sizes (4 rows, 6 columns).
+   */
   @Test
   public void testTextualPrintWithDifferentBoardSize() {
     // Initialize the board with 4 rows and 6 playable columns
@@ -50,9 +64,13 @@ public class TestPawnsBoardTextualView {
     String actualOutput = view.textualPrint(board);
 
     // Assert that the expected output matches the actual output
-    assertEquals(expectedOutput, actualOutput, "Textual print of the board with different sizes should match the expected output.");
+    assertEquals(expectedOutput, actualOutput,
+        "Textual print of the board with different sizes should match the expected output.");
   }
 
+  /**
+   * Tests the textual print of an empty board (0 rows, 0 columns).
+   */
   @Test
   public void testTextualPrintEmptyBoard() {
     // Initialize the board with 0 rows and 0 columns (edge case)
@@ -65,9 +83,13 @@ public class TestPawnsBoardTextualView {
     String actualOutput = view.textualPrint(board);
 
     // Assert that the expected output matches the actual output
-    assertEquals(expectedOutput, actualOutput, "Textual print of an empty board should be an empty string.");
+    assertEquals(expectedOutput, actualOutput,
+        "Textual print of an empty board should be an empty string.");
   }
 
+  /**
+   * Tests the textual print of the board with scoring cells set at specific positions.
+   */
   @Test
   public void testTextualPrintWithScoringCells() {
     // Initialize the board with 3 rows and 5 playable columns
@@ -86,6 +108,7 @@ public class TestPawnsBoardTextualView {
     String actualOutput = view.textualPrint(board);
 
     // Assert that the expected output matches the actual output
-    assertEquals(expectedOutput, actualOutput, "Textual print of the board with ScoringCells should match the expected output.");
+    assertEquals(expectedOutput, actualOutput,
+        "Textual print of the board with ScoringCells should match the expected output.");
   }
 }

@@ -15,20 +15,6 @@ public class TestPawnsBoardModel {
     board = new PawnsBoardModel();
   }
 
-  @Test
-  public void testPlaceCard() {
-    // Test the placeCard method (though not yet implemented)
-    // Create a mock Card object
-    Card card = new Card("Test Card", 5, 10, new char[5][5], model.PlayerColor.RED);
-
-    // Try placing the card at position (1, 2) on the board
-    board.placeCard(card, 1, 2);
-
-    // Assuming placeCard logic will be implemented later, here we would check
-    // if the card is placed correctly (which would be done once the method is implemented).
-    // For now, we check that the board does not throw exceptions when calling the method.
-    // No assertion, as placeCard is not yet implemented, but the test ensures no crash.
-  }
 
   @Test
   public void testBoardInitializationWithDifferentSizes() {

@@ -6,13 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch initial commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PlayerColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PlayerColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/cell/CardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/CardCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/cell/EmptyCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/EmptyCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/cell/PawnGroupCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/PawnGroupCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/cell/ScoringCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/ScoringCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestCardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestCardCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestDeckLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestDeckLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestEmptyCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestEmptyCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestPawnGroupCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestPawnGroupCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestPawnsBoardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestPawnsBoardModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestPawnsBoardTextualView.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestPawnsBoardTextualView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestScoringCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestScoringCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +92,7 @@
       <recent name="C:\Users\aidan_ypururn\OneDrive\Documents\School\Spring_2025\OOD\PawnsBoard\src\model\Deck" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestPawnsBoardModel">
+  <component name="RunManager" selected="JUnit.TestScoringCell">
     <configuration name="TestPawnsBoardModel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="PawnsBoard" />
       <option name="PACKAGE_NAME" value="" />
@@ -142,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestScoringCell" />
+        <item itemvalue="JUnit.TestPawnsBoardTextualView" />
         <item itemvalue="JUnit.TestPawnsBoardModel" />
         <item itemvalue="JUnit.TestPawnsBoardModel.testBoardInitializationWithMinimalSize" />
-        <item itemvalue="JUnit.TestPawnsBoardTextualView" />
         <item itemvalue="JUnit.TestPawnsBoardModel.testBoardDimensions" />
-        <item itemvalue="JUnit.TestScoringCell" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +160,7 @@
       <updated>1741765236529</updated>
       <workItem from="1741765237538" duration="3102000" />
       <workItem from="1741894719329" duration="4231000" />
-      <workItem from="1741904826758" duration="3402000" />
+      <workItem from="1741904826758" duration="3963000" />
     </task>
     <servers />
   </component>
