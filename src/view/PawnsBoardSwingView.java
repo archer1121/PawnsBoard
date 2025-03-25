@@ -25,6 +25,24 @@ public class PawnsBoardSwingView extends JFrame {
     BoardPanel boardPanel = new BoardPanel();
     add(boardPanel, BorderLayout.CENTER);
 
+    //add to bottom
+    HandPanel handPanel = new HandPanel(model);
+    handPanel.setClickListener(new ViewListener() {
+      @Override
+      public void handleCardClick(int cardIndex) {
+        System.out.println("Card " + cardIndex + " clicked");
+      }
+      @Override
+      public void handleCellClick(int row, int col) {
+        // handle
+      }
+      @Override
+      public void handleKeyPress(String key) {
+        System.out.println("Key pressed: " + key);
+      }
+    });
+    add(handPanel, BorderLayout.SOUTH);
+
     // Mouse listener for cell clicks
     boardPanel.addMouseListener(new MouseAdapter() {
       @Override

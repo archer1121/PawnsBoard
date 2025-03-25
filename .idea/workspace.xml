@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch last commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/BoardPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PawnsBoardSwingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PawnsBoardSwingView.java" afterDir="false" />
-    </list>
+    <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="drawing based on cells" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741912630482</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="drawing based on cells">
+      <option name="closed" value="true" />
+      <created>1742945524621</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742945524621</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +177,8 @@
     <MESSAGE value="stephen branch initial commit" />
     <MESSAGE value="stephen branch commiting scoring the board changes and readme" />
     <MESSAGE value="stephen branch last commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="stephen branch last commit" />
+    <MESSAGE value="drawing based on cells" />
+    <option name="LAST_COMMIT_MESSAGE" value="drawing based on cells" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PawnsBoard$TestPawnGroupCell.ic" NAME="TestPawnGroupCell Coverage Results" MODIFIED="1741911257577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
