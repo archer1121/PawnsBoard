@@ -20,19 +20,26 @@ public class PawnsBoardModel implements Board {
 
   private Cell[][] board;
 
+  public PawnsBoardModel() {
+    // Constructor does not auto-initialize, initBoard() must be explicitly called
+    this.board = null;
+  }
+
   @Override
   public Cell[][] getBoard() {
+    checkBoardInitialized();
     return this.board;
   }
 
   @Override
   public int getNumCols() {
-    // Return the number of rows in the board
+    checkBoardInitialized();
     return this.board[0].length;
   }
 
   @Override
   public int getNumRows() {
+    checkBoardInitialized();
     return this.board.length;
   }
 
@@ -45,25 +52,27 @@ public class PawnsBoardModel implements Board {
    */
   @Override
   public void initBoard(int rows, int cols) {
+    if (rows < 1 || cols < 3 || cols % 2 == 0) {
+      throw new IllegalArgumentException("Invalid board dimensions: must have at least 1 row and an odd number of playable columns (≥3).");
+    }
+
     this.board = new Cell[rows][cols + 2]; // +2 for the scoring columns
 
-    //now we need a scoring block in the first and last columns and empty cell in all others
-    //we also need a pawn in each player's first row
-    for (int row = 0; row < this.getNumRows(); row++) {
-      for (int col = 0; col < this.getNumCols(); col++) {
-
-        //want a scoring block in each end and starting column
-        if (col == 0 || col == this.getNumCols() - 1) {
+    for (int row = 0; row < rows; row++) {
+      for (int col = 0; col < cols + 2; col++) {
+        // Scoring cells at both ends
+        if (col == 0 || col == cols + 1) {
           this.board[row][col] = new ScoringCell(0);
         }
-
+        // First playable column has red pawns
         else if (col == 1) {
           this.board[row][col] = new PawnGroupCell(1, PlayerColor.RED);
         }
-        else if (col == this.getNumCols() - 2) {
+        // Last playable column has blue pawns
+        else if (col == cols) {
           this.board[row][col] = new PawnGroupCell(1, PlayerColor.BLUE);
         }
-
+        // Empty cells in between
         else {
           this.board[row][col] = new EmptyCell();
         }
@@ -73,51 +82,55 @@ public class PawnsBoardModel implements Board {
 
   /**
    * Places a card at the specified location on the board.
-   * This method is currently unimplemented but will be responsible for placing cards
-   * on the board at a given row and column.
    *
    * @param card The playing card to be placed.
    * @param row The row where the card will be placed (starts at index 0).
    * @param col The column where the card will be placed (starts at index 0).
    */
-
   public void placeCard(Card card, int row, int col) {
-
+    checkBoardInitialized();
+    if (row < 0 || row >= getNumRows() || col < 0 || col >= getNumCols()) {
+      throw new IndexOutOfBoundsException("Invalid row or column for placing a card.");
+    }
     this.board[row][col] = new CardCell(card);
   }
 
   /**
-   * This method will calculate and insert new scoring cells with the proper scores.
+   * Updates scoring cells based on the number of red and blue cards in each row.
    */
   public void scoreTheBoard() {
+    checkBoardInitialized();
 
     for (int row = 0; row < board.length; row++) {
       int redScore = 0;
       int blueScore = 0;
-      for (int col = 0; col < this.board[0].length; col++) {
-        //if it's a card
-        if (this.board[row][col] instanceof CardCell) {
 
-          //if the card is red
-          if (((CardCell) this.board[row][col]).getCardColor().equals(PlayerColor.RED)) {
-            redScore += ((CardCell) this.board[row][col]).getCardValue();
-          }
-
-          //if the card is blue
-          if (((CardCell) this.board[row][col]).getCardColor().equals(PlayerColor.BLUE)) {
-            blueScore += ((CardCell) this.board[row][col]).getCardValue();
+      for (int col = 0; col < board[row].length; col++) {
+        if (board[row][col] instanceof CardCell) {
+          CardCell cardCell = (CardCell) board[row][col];
+          if (cardCell.getCardColor() == PlayerColor.RED) {
+            redScore += cardCell.getCardValue();
+          } else if (cardCell.getCardColor() == PlayerColor.BLUE) {
+            blueScore += cardCell.getCardValue();
           }
         }
       }
 
-      //if red has more red gets the points, if equal no points
+      // Assign scores to the left (red) and right (blue) scoring columns
       if (redScore > blueScore) {
-        this.board[row][0] = new ScoringCell(redScore);
+        board[row][0] = new ScoringCell(redScore);
+      } else if (blueScore > redScore) {
+        board[row][board[0].length - 1] = new ScoringCell(blueScore);
       }
-      //if blue has more blue gets points
-      if (redScore < blueScore) {
-        this.board[row][this.board.length - 1] = new ScoringCell(blueScore);
-      }
+    }
+  }
+
+  /**
+   * Ensures that the board has been initialized before attempting to access it.
+   */
+  private void checkBoardInitialized() {
+    if (this.board == null) {
+      throw new IllegalStateException("Board has not been initialized. Call initBoard() first.");
     }
   }
 }
