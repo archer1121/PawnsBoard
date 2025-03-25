@@ -22,11 +22,11 @@ public class CardCell implements Cell {
   }
 
   public int getCardValue() {
-    return this.card.getValue();
+    return 0;
   }
 
   public PlayerColor getCardColor() {
-    return this.card.getColor();
+    return PlayerColor.RED;
   }
 
 

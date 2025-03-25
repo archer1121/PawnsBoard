@@ -5,19 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch last commit">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PawnsBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/ReadonlyPawnsBoardModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/cell/ReadonlyCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/BoardPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/HandPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/PawnsBoardSwingView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/PawnsBoardView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/ViewListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PawnsBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PawnsBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/cell/CardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/CardCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/cell/PawnGroupCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/PawnGroupCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/deck/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/deck/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PawnsBoardTextualView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PawnsBoardTextualView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestPawnGroupCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestPawnGroupCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/TestPawnsBoardTextualView.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestPawnsBoardTextualView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/cell/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/Cell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +48,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.PawnsBoard.executor": "Run",
+    "Application.PawnsBoardGame.executor": "Run",
     "Application.TestDeckLoader.executor": "Run",
     "Downloaded.Files.Path.Enabled": "true",
     "JUnit.PawnsBoardModelTest.executor": "Run",
@@ -97,12 +98,17 @@
       <recent name="C:\Users\aidan_ypururn\OneDrive\Documents\School\Spring_2025\OOD\PawnsBoard\src\model\Deck" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestPawnGroupCell">
-    <configuration name="TestCardCell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.PawnsBoard">
+    <configuration name="PawnsBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PawnsBoard" />
       <module name="PawnsBoard" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestCardCell" />
-      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PawnsBoardGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PawnsBoardGame" />
+      <module name="PawnsBoard" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -134,22 +140,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestScoringCell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="PawnsBoard" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestScoringCell" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PawnsBoard" />
+        <item itemvalue="Application.PawnsBoardGame" />
         <item itemvalue="JUnit.TestPawnGroupCell" />
         <item itemvalue="JUnit.TestEmptyCell" />
         <item itemvalue="JUnit.TestDeckLoader" />
-        <item itemvalue="JUnit.TestCardCell" />
-        <item itemvalue="JUnit.TestScoringCell" />
       </list>
     </recent_temporary>
   </component>
@@ -164,6 +161,7 @@
       <workItem from="1741765237538" duration="3102000" />
       <workItem from="1741894719329" duration="4231000" />
       <workItem from="1741904826758" duration="4798000" />
+      <workItem from="1742923632532" duration="1242000" />
     </task>
     <task id="LOCAL-00001" summary="stephen branch last commit">
       <option name="closed" value="true" />

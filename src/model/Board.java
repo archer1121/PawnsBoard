@@ -1,39 +1,13 @@
 package model;
 
 import model.cell.Cell;
+import model.deck.Card;
 
 /**
- * This interface represents the board for the game. The board is a 2D array.
- * Each space on the board can hold a Card, a PawnGroup, EmptySpace, or a Scoring block.
- *
- * <p>
- * If the board is 3x5, we initialize it to be 3x7 because we need to add scoring blocks
- * on both sides of the row.
- * </p>
+ * Mutable interface for the Pawns Board game model.
+ * Extends the read-only interface and adds mutation methods.
  */
-
-public interface Board {
-
-  /**
-   * Gets the current board as a 2D array of Cells.
-   *
-   * @return The 2D array representing the board.
-   */
-  public Cell[][] getBoard();
-
-  /**
-   * Returns the number of rows in the board.
-   *
-   * @return The number of rows in the board.
-   */
-  public int getNumRows();
-
-  /**
-   * Returns the number of columns in the board.
-   *
-   * @return The number of columns in the board.
-   */
-  public int getNumCols();
+public interface Board extends ReadonlyPawnsBoardModel {
 
   /**
    * Initializes the board with the specified number of rows and columns.
@@ -42,6 +16,19 @@ public interface Board {
    * @param rows The number of rows in the board.
    * @param cols The number of playable columns (excluding the scoring columns).
    */
-  public void initBoard(int rows, int cols);
+  void initBoard(int rows, int cols);
 
+  /**
+   * Places a card at the specified location on the board.
+   *
+   * @param card The playing card to be placed.
+   * @param row The row where the card will be placed (starts at index 0).
+   * @param col The column where the card will be placed (starts at index 0).
+   */
+  void placeCard(Card card, int row, int col);
+
+  /**
+   * Calculates and updates the scores on the board.
+   */
+  void scoreTheBoard();
 }
