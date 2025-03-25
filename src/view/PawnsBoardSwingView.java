@@ -53,6 +53,7 @@ public class PawnsBoardSwingView extends JFrame {
       }
     });
 
+
     setFocusable(true);
     setVisible(true); // This ensures the window is displayed.
   }

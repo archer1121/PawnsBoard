@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import model.ReadonlyPawnsBoardModel;
+import model.cell.CardCell;
+import model.cell.Cell;
+import model.cell.PawnGroupCell;
+import model.cell.ScoringCell;
 
 public class BoardPanel extends JPanel {
   private static final int CELL_SIZE = 60;
@@ -36,6 +40,41 @@ public class BoardPanel extends JPanel {
     super.paintComponent(g);
     Graphics2D g2d = (Graphics2D) g;
     // Drawing implementation
+    int numRows = model.getNumRows();
+    int numCols = model.getNumCols();
+    int cellSize = Math.min(getWidth() / numCols, getHeight() / numRows);
+
+    for (int r = 0; r < numRows; r++) {
+      for (int c = 0; c < numCols; c++) {
+        int x = c * cellSize;
+        int y = r * cellSize;
+        Cell cell = model.getBoard()[r][c];
+
+        //color based on cell
+        if (cell instanceof ScoringCell) {
+          g2d.setColor(Color.YELLOW);
+        } else if (cell instanceof CardCell) {
+          g2d.setColor(Color.GREEN);
+        } else if (cell instanceof PawnGroupCell) {
+          g2d.setColor(Color.ORANGE);
+        } else {
+          g2d.setColor(Color.LIGHT_GRAY);
+        }
+        g2d.fillRect(x, y, cellSize, cellSize);
+        g2d.setColor(Color.BLACK);
+        g2d.drawRect(x, y, cellSize, cellSize);
+
+
+        g2d.drawString(cell.toString(), x + cellSize / 4, y + cellSize / 2);
+      }
+    }
+    //selection overlay
+    if (selectedCell != null) {
+      g2d.setColor(Color.CYAN);
+      int x = selectedCell.x * cellSize;
+      int y = selectedCell.y * cellSize;
+      g2d.fillRect(x + 2, y + 2, cellSize - 4, cellSize - 4);
+    }
   }
 
   @Override public Dimension getPreferredSize() {
