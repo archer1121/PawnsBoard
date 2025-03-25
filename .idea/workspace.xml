@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="stephen branch last commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PawnsBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PawnsBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/PawnsBoardSwingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PawnsBoardSwingView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +152,7 @@
       <workItem from="1741894719329" duration="4231000" />
       <workItem from="1741904826758" duration="4798000" />
       <workItem from="1742923632532" duration="1965000" />
-      <workItem from="1742941786255" duration="1860000" />
+      <workItem from="1742941786255" duration="2626000" />
     </task>
     <task id="LOCAL-00001" summary="stephen branch last commit">
       <option name="closed" value="true" />

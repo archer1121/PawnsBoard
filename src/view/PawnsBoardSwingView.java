@@ -22,18 +22,10 @@ public class PawnsBoardSwingView extends JFrame {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setSize(800, 600);
 
-    // Create the panels
-    BoardPanel boardPanel = new BoardPanel(model);
-    HandPanel handPanel = new HandPanel(model);
+    BoardPanel boardPanel = new BoardPanel();
+    add(boardPanel, BorderLayout.CENTER);
 
-    // Set up the layout manager
-    setLayout(new BorderLayout());
-
-    // Add the board and hand panels to the frame
-    add(boardPanel, BorderLayout.CENTER);  // Center for the board
-    add(handPanel, BorderLayout.SOUTH);    // Bottom for the hand panel
-
-    // Mouse listener for cell clicks in the board
+    // Mouse listener for cell clicks
     boardPanel.addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(MouseEvent e) {
@@ -81,6 +73,33 @@ public class PawnsBoardSwingView extends JFrame {
   private void notifyKeyPress(String key) {
     for (ViewListener listener : listeners) {
       listener.handleKeyPress(key);
+    }
+  }
+
+  private class BoardPanel extends JPanel {
+    @Override
+    protected void paintComponent(Graphics g) {
+      super.paintComponent(g);
+      Graphics2D g2d = (Graphics2D) g;
+      int numRows = model.getNumRows();
+      int numCols = model.getNumCols();
+      int cellSize = Math.min(getWidth() / numCols, getHeight() / numRows);
+
+      for (int r = 0; r < numRows; r++) {
+        for (int c = 0; c < numCols; c++) {
+          int x = c * cellSize;
+          int y = r * cellSize;
+          g2d.setColor(Color.LIGHT_GRAY);
+          g2d.fillRect(x, y, cellSize, cellSize);
+          g2d.setColor(Color.BLACK);
+          g2d.drawRect(x, y, cellSize, cellSize);
+
+          if (selectedCell != null && selectedCell.x == c && selectedCell.y == r) {
+            g2d.setColor(Color.CYAN);
+            g2d.fillRect(x + 2, y + 2, cellSize - 4, cellSize - 4);
+          }
+        }
+      }
     }
   }
 }
