@@ -7,7 +7,9 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
-import java.awt.event.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import model.ReadonlyPawnsBoardModel;
 import model.cell.CardCell;
 import model.cell.Cell;

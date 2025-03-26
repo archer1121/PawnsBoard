@@ -29,7 +29,7 @@ public class HandPanel extends JPanel {
   private final int numCards = 5;
 
   /**
-   * The separate panel to hold the cards
+   * The separate panel to hold the cards.
    * @param model of the game already init
    */
   public HandPanel(ReadonlyPawnsBoardModel model) {
