@@ -16,6 +16,10 @@ public class PawnsBoardSwingView extends JFrame {
   private int selectedCardIndex = -1;
   private Point selectedCell = null;
 
+  /**
+   * Our main view using java swing
+   * @param model of game already init
+   */
   public PawnsBoardSwingView(ReadonlyPawnsBoardModel model) {
     this.model = model;
     setTitle("Pawns Board Game");

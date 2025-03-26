@@ -20,8 +20,11 @@ public class PawnsBoardModel implements Board {
 
   private Cell[][] board;
 
+  /**
+   * Constructor does not auto-initialize, initBoard() must be explicitly called
+   */
   public PawnsBoardModel() {
-    // Constructor does not auto-initialize, initBoard() must be explicitly called
+
     this.board = null;
   }
 

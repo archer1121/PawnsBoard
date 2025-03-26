@@ -81,6 +81,10 @@ public class BoardPanel extends JPanel {
     return new Dimension(model.getNumCols() * CELL_SIZE, model.getNumRows() * CELL_SIZE);
   }
 
+  /**
+   * Init viewlistener
+   * @param listener for click handling
+   */
   public void setClickListener(ViewListener listener) {
     this.listener = listener;
   }

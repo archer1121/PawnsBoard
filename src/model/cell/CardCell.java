@@ -21,10 +21,18 @@ public class CardCell implements Cell {
     // Card is used locally in textualPrint method
   }
 
+  /**
+   * The value of a card cell.
+   * @return int
+   */
   public int getCardValue() {
     return 0;
   }
 
+  /**
+   * The card color either red or blue
+   * @return enum PlayerColor
+   */
   public PlayerColor getCardColor() {
     return PlayerColor.RED;
   }

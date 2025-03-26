@@ -90,6 +90,10 @@ public class Card {
     return sb.toString();
   }
 
+  /**
+   * Need this becaise cards belong to a player (color)
+   * @return PlayerColor of card
+   */
   public PlayerColor getPlayerColor() {
     return playerColor;
   }

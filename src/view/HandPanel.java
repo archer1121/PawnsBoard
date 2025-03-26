@@ -19,6 +19,10 @@ public class HandPanel extends JPanel {
   // Later, you can replace this with model.getHand().size() (or similar) once your model exposes the hand.
   private final int numCards = 5;
 
+  /**
+   * The separate panel to hold the cards
+   * @param model of the game already init
+   */
   public HandPanel(ReadonlyPawnsBoardModel model) {
     this.model = model;
     setBackground(Color.WHITE);
@@ -90,6 +94,10 @@ public class HandPanel extends JPanel {
     return new Dimension(width, height);
   }
 
+  /**
+   * Init view listener
+   * @param listener to handle clicks
+   */
   public void setClickListener(ViewListener listener) {
     this.listener = listener;
   }
