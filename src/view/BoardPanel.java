@@ -1,7 +1,12 @@
 package view;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JPanel;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.event.*;
 import model.ReadonlyPawnsBoardModel;
 import model.cell.CardCell;
@@ -9,12 +14,19 @@ import model.cell.Cell;
 import model.cell.PawnGroupCell;
 import model.cell.ScoringCell;
 
+/**
+ * Class to house our main panel which is the game board and nothing else.
+ */
 public class BoardPanel extends JPanel {
   private static final int CELL_SIZE = 60;
   private final ReadonlyPawnsBoardModel model;
   private ViewListener listener;
   private Point selectedCell = null;
 
+  /**
+   * Main panel of the game board with just the squares.
+   * @param model of game already init
+   */
   public BoardPanel(ReadonlyPawnsBoardModel model) {
     this.model = model;
     setBackground(Color.WHITE);
@@ -29,7 +41,9 @@ public class BoardPanel extends JPanel {
           } else {
             selectedCell = new Point(row, col);
           }
-          if (listener != null) listener.handleCellClick(row, col);
+          if (listener != null) {
+            listener.handleCellClick(row, col);
+          }
           repaint();
         }
       }
@@ -82,7 +96,7 @@ public class BoardPanel extends JPanel {
   }
 
   /**
-   * Init viewlistener
+   * Init viewlistener.
    * @param listener for click handling
    */
   public void setClickListener(ViewListener listener) {

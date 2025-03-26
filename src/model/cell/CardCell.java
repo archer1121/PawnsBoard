@@ -30,7 +30,7 @@ public class CardCell implements Cell {
   }
 
   /**
-   * The card color either red or blue
+   * The card color either red or blue.
    * @return enum PlayerColor
    */
   public PlayerColor getCardColor() {

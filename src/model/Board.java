@@ -1,6 +1,6 @@
 package model;
 
-import model.cell.Cell;
+
 import model.deck.Card;
 
 /**

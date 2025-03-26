@@ -1,22 +1,31 @@
 package view;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JPanel;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import model.ReadonlyPawnsBoardModel;
 
+
+/**
+ * Class to represent our panel which displays a users hand.
+ */
 public class HandPanel extends JPanel {
   private static final int CARD_WIDTH = 80;
   private static final int CARD_HEIGHT = 120;
   private static final int GAP = 10;
 
-  private final ReadonlyPawnsBoardModel model;
   private ViewListener listener;
   private Integer selectedCardIndex = null;
 
   // For now, we assume there are 5 cards in the hand.
-  // Later, you can replace this with model.getHand().size() (or similar) once your model exposes the hand.
+  // Later, you can replace this with model.getHand().size()
+  // (or similar) once your model exposes the hand.
   private final int numCards = 5;
 
   /**
@@ -24,7 +33,6 @@ public class HandPanel extends JPanel {
    * @param model of the game already init
    */
   public HandPanel(ReadonlyPawnsBoardModel model) {
-    this.model = model;
     setBackground(Color.WHITE);
 
     addMouseListener(new MouseAdapter() {
@@ -95,7 +103,7 @@ public class HandPanel extends JPanel {
   }
 
   /**
-   * Init view listener
+   * Init view listener.
    * @param listener to handle clicks
    */
   public void setClickListener(ViewListener listener) {

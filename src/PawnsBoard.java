@@ -2,7 +2,14 @@ import model.PawnsBoardModel;
 import view.PawnsBoardSwingView;
 import view.ViewListener;
 
+/**
+ * Class used to house our main method.
+ */
 public final class PawnsBoard {
+  /**
+   * Main class used as entry point for program.
+   * @param args standard java
+   */
   public static void main(String[] args) {
     PawnsBoardModel model = new PawnsBoardModel();
     model.initBoard(5, 5);

@@ -1,8 +1,15 @@
 package view;
 
 import model.ReadonlyPawnsBoardModel;
-import javax.swing.*;
-import java.awt.*;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +24,7 @@ public class PawnsBoardSwingView extends JFrame {
   private Point selectedCell = null;
 
   /**
-   * Our main view using java swing
+   * Our main view using java swing.
    * @param model of game already init
    */
   public PawnsBoardSwingView(ReadonlyPawnsBoardModel model) {
@@ -32,14 +39,17 @@ public class PawnsBoardSwingView extends JFrame {
     //add to bottom
     HandPanel handPanel = new HandPanel(model);
     handPanel.setClickListener(new ViewListener() {
+
       @Override
       public void handleCardClick(int cardIndex) {
         System.out.println("Card " + cardIndex + " clicked");
       }
+
       @Override
       public void handleCellClick(int row, int col) {
         // handle
       }
+
       @Override
       public void handleKeyPress(String key) {
         System.out.println("Key pressed: " + key);
@@ -100,6 +110,7 @@ public class PawnsBoardSwingView extends JFrame {
   }
 
   private class BoardPanel extends JPanel {
+
     @Override
     protected void paintComponent(Graphics g) {
       super.paintComponent(g);

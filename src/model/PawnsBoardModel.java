@@ -21,7 +21,7 @@ public class PawnsBoardModel implements Board {
   private Cell[][] board;
 
   /**
-   * Constructor does not auto-initialize, initBoard() must be explicitly called
+   * Constructor does not auto-initialize, initBoard() must be explicitly called.
    */
   public PawnsBoardModel() {
 
@@ -56,7 +56,8 @@ public class PawnsBoardModel implements Board {
   @Override
   public void initBoard(int rows, int cols) {
     if (rows < 1 || cols < 3 || cols % 2 == 0) {
-      throw new IllegalArgumentException("Invalid board dimensions: must have at least 1 row and an odd number of playable columns (≥3).");
+      throw new IllegalArgumentException("Invalid board dimensions: must have at " +
+              "least 1 row and an odd number of playable columns (≥3).");
     }
 
     this.board = new Cell[rows][cols + 2]; // +2 for the scoring columns
