@@ -1,5 +1,6 @@
 package view;
 
+import controller.GameController;
 import model.ReadonlyPawnsBoardModel;
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +16,7 @@ public class PawnsBoardSwingView extends JFrame {
   private final List<ViewListener> listeners = new ArrayList<>();
   private int selectedCardIndex = -1;
   private Point selectedCell = null;
+  private GameController controller; // Add controller reference
 
   /**
    * Our main view using java swing
@@ -26,23 +28,29 @@ public class PawnsBoardSwingView extends JFrame {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setSize(800, 600);
 
-    BoardPanel boardPanel = new BoardPanel();
+    BoardPanel boardPanel = new BoardPanel(this.model);
     add(boardPanel, BorderLayout.CENTER);
 
-    //add to bottom
+    // Add HandPanel to bottom
     HandPanel handPanel = new HandPanel(model);
     handPanel.setClickListener(new ViewListener() {
       @Override
       public void handleCardClick(int cardIndex) {
-        System.out.println("Card " + cardIndex + " clicked");
+        if (controller != null) {
+          controller.handleCardClick(cardIndex); // Delegate to controller
+        }
       }
       @Override
       public void handleCellClick(int row, int col) {
-        // handle
+        if (controller != null) {
+          controller.handleCellClick(row, col); // Delegate to controller
+        }
       }
       @Override
       public void handleKeyPress(String key) {
-        System.out.println("Key pressed: " + key);
+        if (controller != null) {
+          controller.handleKeyPress(key); // Delegate to controller
+        }
       }
     });
     add(handPanel, BorderLayout.SOUTH);
@@ -55,7 +63,9 @@ public class PawnsBoardSwingView extends JFrame {
         int col = e.getX() / cellSize;
         int row = e.getY() / cellSize;
         selectedCell = new Point(col, row);
-        notifyCellClick(row, col);
+        if (controller != null) {
+          controller.handleCellClick(row, col); // Delegate to controller
+        }
         repaint();
       }
     });
@@ -65,9 +75,13 @@ public class PawnsBoardSwingView extends JFrame {
       @Override
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-          notifyKeyPress("Confirm");
+          if (controller != null) {
+            controller.handleKeyPress("Confirm"); // Notify controller for confirmation
+          }
         } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
-          notifyKeyPress("Cancel");
+          if (controller != null) {
+            controller.handleKeyPress("Cancel"); // Notify controller for cancellation
+          }
           selectedCardIndex = -1;
           selectedCell = null;
           repaint();
@@ -75,9 +89,13 @@ public class PawnsBoardSwingView extends JFrame {
       }
     });
 
-
     setFocusable(true);
     setVisible(true); // This ensures the window is displayed.
+  }
+
+  // Set the GameController to integrate it with the view
+  public void setController(GameController controller) {
+    this.controller = controller; // Store the controller reference
   }
 
   /**
@@ -96,33 +114,6 @@ public class PawnsBoardSwingView extends JFrame {
   private void notifyKeyPress(String key) {
     for (ViewListener listener : listeners) {
       listener.handleKeyPress(key);
-    }
-  }
-
-  private class BoardPanel extends JPanel {
-    @Override
-    protected void paintComponent(Graphics g) {
-      super.paintComponent(g);
-      Graphics2D g2d = (Graphics2D) g;
-      int numRows = model.getNumRows();
-      int numCols = model.getNumCols();
-      int cellSize = Math.min(getWidth() / numCols, getHeight() / numRows);
-
-      for (int r = 0; r < numRows; r++) {
-        for (int c = 0; c < numCols; c++) {
-          int x = c * cellSize;
-          int y = r * cellSize;
-          g2d.setColor(Color.LIGHT_GRAY);
-          g2d.fillRect(x, y, cellSize, cellSize);
-          g2d.setColor(Color.BLACK);
-          g2d.drawRect(x, y, cellSize, cellSize);
-
-          if (selectedCell != null && selectedCell.x == c && selectedCell.y == r) {
-            g2d.setColor(Color.CYAN);
-            g2d.fillRect(x + 2, y + 2, cellSize - 4, cellSize - 4);
-          }
-        }
-      }
     }
   }
 }

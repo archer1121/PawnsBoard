@@ -36,10 +36,11 @@ public class BoardPanel extends JPanel {
     });
   }
 
-  @Override protected void paintComponent(Graphics g) {
+  @Override
+  protected void paintComponent(Graphics g) {
     super.paintComponent(g);
     Graphics2D g2d = (Graphics2D) g;
-    // Drawing implementation
+
     int numRows = model.getNumRows();
     int numCols = model.getNumCols();
     int cellSize = Math.min(getWidth() / numCols, getHeight() / numRows);
@@ -50,13 +51,14 @@ public class BoardPanel extends JPanel {
         int y = r * cellSize;
         Cell cell = model.getBoard()[r][c];
 
-        //color based on cell
+        String cellString = "";
+
+        // color based on cell
         if (cell instanceof ScoringCell) {
-          g2d.setColor(Color.YELLOW);
+          g2d.setColor(Color.WHITE);
+          cellString = cell.textualPrint();
         } else if (cell instanceof CardCell) {
           g2d.setColor(Color.GREEN);
-        } else if (cell instanceof PawnGroupCell) {
-          g2d.setColor(Color.ORANGE);
         } else {
           g2d.setColor(Color.LIGHT_GRAY);
         }
@@ -64,11 +66,37 @@ public class BoardPanel extends JPanel {
         g2d.setColor(Color.BLACK);
         g2d.drawRect(x, y, cellSize, cellSize);
 
+        // Draw player color circles on left and right sections
+        if (c == 1) { // Check if the row is in the first row (Red Player's side)
+            // Red side: Draw red circle
+            g2d.setColor(Color.RED);
+            g2d.fillOval(x + (cellSize / 4), y + (cellSize / 4), cellSize / 2, cellSize / 2);
+        } else if (c == numCols - 2) { // Check if the row is in the second last row (Blue Player's side)
+            // Blue side: Draw blue circle
+            g2d.setColor(Color.BLUE);
+            g2d.fillOval(x + (cellSize / 4), y + (cellSize / 4), cellSize / 2, cellSize / 2);
+        }
 
-        g2d.drawString(cell.toString(), x + cellSize / 4, y + cellSize / 2);
+        // Draw cell text (e.g., score)
+        if (!cellString.equals("")) {
+          Font font = new Font("Arial", Font.BOLD, 30); // Set a larger font size (16 is an example, adjust as needed)
+          g2d.setFont(font);
+
+          // Calculate the string width and height for centering
+          FontMetrics fontMetrics = g2d.getFontMetrics();
+          int textWidth = fontMetrics.stringWidth(cellString);
+          int textHeight = fontMetrics.getHeight();
+
+          // Calculate the position to center the text
+          int xPos = x + (cellSize - textWidth) / 2; // Center horizontally
+          int yPos = y + (cellSize + textHeight) / 2 - fontMetrics.getDescent(); // Center vertically
+
+          g2d.drawString(cellString, xPos, yPos);
+        }
       }
     }
-    //selection overlay
+
+    // selection overlay
     if (selectedCell != null) {
       g2d.setColor(Color.CYAN);
       int x = selectedCell.x * cellSize;

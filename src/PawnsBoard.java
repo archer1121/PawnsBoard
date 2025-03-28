@@ -1,31 +1,22 @@
 import model.PawnsBoardModel;
+import controller.GameController;
 import view.PawnsBoardSwingView;
-import view.ViewListener;
 
-public final class PawnsBoard {
+public class PawnsBoard {
+
   public static void main(String[] args) {
+    // Create the model and view
     PawnsBoardModel model = new PawnsBoardModel();
-    model.initBoard(5, 5);
+
+    model.initBoard(3,5);
 
     PawnsBoardSwingView view = new PawnsBoardSwingView(model);
 
-    view.addClickListener(new ViewListener() {
-      @Override
-      public void handleCardClick(int cardIndex) {
-        System.out.println("Card " + cardIndex + " clicked");
-      }
+    // Create the game controller and pass the model and view
+    GameController controller = new GameController(model, view);
 
-      @Override
-      public void handleCellClick(int row, int col) {
-        System.out.println("Cell clicked at (" + row + "," + col + ")");
-      }
-
-      @Override
-      public void handleKeyPress(String key) {
-        System.out.println("Key pressed: " + key);
-      }
-    });
-
-    // No need for view.display(); since setVisible(true) is in the constructor.
+    // Start the game
+    view.setController(controller);
+    view.setVisible(true);
   }
 }
