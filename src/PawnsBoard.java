@@ -2,6 +2,8 @@ import model.PawnsBoardModel;
 import controller.GameController;
 import view.PawnsBoardSwingView;
 
+//TODO: Finish HandPanel and add functionality to controller
+
 public class PawnsBoard {
 
   public static void main(String[] args) {

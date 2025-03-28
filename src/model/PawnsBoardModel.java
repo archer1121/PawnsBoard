@@ -88,16 +88,74 @@ public class PawnsBoardModel implements Board {
    * Places a card at the specified location on the board.
    *
    * @param card The playing card to be placed.
-   * @param row The row where the card will be placed (starts at index 0).
-   * @param col The column where the card will be placed (starts at index 0).
+   * @param row  The row where the card will be placed (starts at index 0).
+   * @param col  The column where the card will be placed (starts at index 0).
    */
   public void placeCard(Card card, int row, int col) {
-    checkBoardInitialized();
-    if (row < 0 || row >= getNumRows() || col < 0 || col >= getNumCols()) {
-      throw new IndexOutOfBoundsException("Invalid row or column for placing a card.");
+    Cell cell = board[row][col];
+
+    // Check if the cell is a PawnGroupCell
+    if (cell instanceof PawnGroupCell) {
+      PawnGroupCell pawnCell = (PawnGroupCell) cell;
+      // Check if the player has enough pawns in the selected cell
+      int pawnsInCell = pawnCell.getNumPawns();
+      if (pawnsInCell >= card.getCost()) {
+        // Remove the pawns and place the card in the cell
+        pawnCell.removePawns(card.getCost());
+        // We assume a CardCell is appropriate for this cell type
+        board[row][col] = new CardCell(card);
+
+        // Apply card's influence grid to nearby cells
+        applyInfluence(card, row, col);
+      }
     }
-    this.board[row][col] = new CardCell(card);
+    // If the cell is not a PawnGroupCell, return false
   }
+
+
+  private void applyInfluence(Card card, int row, int col) {
+    char[][] influenceGrid = card.getInfluenceGrid();
+
+    for (int i = 0; i < influenceGrid.length; i++) {
+      for (int j = 0; j < influenceGrid[i].length; j++) {
+        // Determine the affected cell's coordinates
+        int affectedRow = row + (i - 2);  // Adjust by 2 for the center of the grid
+        int affectedCol = col + (j - 2);
+
+        // Make sure the cell is within bounds
+        if (affectedRow >= 0 && affectedRow < board.length &&
+            affectedCol >= 0 && affectedCol < board[0].length) {
+
+          // Get the affected cell
+          Cell affectedCell = board[affectedRow][affectedCol];
+
+          // Apply the influence only if it's marked by '#'
+          if (influenceGrid[i][j] == '#') {
+
+            // Check if the affected cell is a PawnGroupCell, where we can apply pawn-related effects
+            if (affectedCell instanceof PawnGroupCell) {
+              PawnGroupCell pawnCell = (PawnGroupCell) affectedCell;
+
+              if (pawnCell.getPawnColor() == null) {
+                // Empty cell: add 1 pawn of the current player
+                pawnCell.addPawn(1);
+              } else if (pawnCell.getPawnColor() == card.getPlayerColor()) {
+                // Cell already owned by the player: increase pawns by 1
+                pawnCell.addPawn(1);
+              } else {
+                // Enemy cell: convert enemy pawns
+                pawnCell.convertPawns(card.getPlayerColor());
+              }
+            }
+            // If you want to add more actions for other cell types (like ScoringCell, EmptyCell, etc.), you can add further checks here.
+          }
+        }
+      }
+    }
+  }
+
+
+
 
   /**
    * Updates scoring cells based on the number of red and blue cards in each row.
@@ -127,6 +185,20 @@ public class PawnsBoardModel implements Board {
         board[row][board[0].length - 1] = new ScoringCell(blueScore);
       }
     }
+  }
+
+  public boolean canPlaceCard(Card card, int row, int col) {
+    // Check if the cell is valid for placing the card based on game rules
+    Cell cell = getBoard()[row][col];
+    if (cell instanceof Cell && hasPawnsToPlace(card, row, col)) {
+      return true;
+    }
+    return false;
+  }
+
+  private boolean hasPawnsToPlace(Card card, int row, int col) {
+    // Logic to check if the player has enough pawns in the cell to place the card
+    return true; // Simplified; you need to implement this based on your game rules
   }
 
   /**

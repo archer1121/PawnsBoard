@@ -27,4 +27,12 @@ public class ScoringCell implements Cell {
   public void updateScoreCell(int newScore) {
     this.score = newScore;
   }
+
+  /**
+   * Gets the current score.
+   * @return current score value
+   */
+  public int getScore() {
+    return score;
+  }
 }

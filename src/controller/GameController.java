@@ -3,6 +3,7 @@ package controller;
 import model.PawnsBoardModel;
 import model.PlayerColor;
 import model.PlayerModel;
+import model.SimpleComputerPlayer;
 import model.deck.Card;
 import model.cell.Cell;
 import view.PawnsBoardSwingView;
@@ -18,15 +19,17 @@ public class GameController {
   private PlayerModel currentPlayer;
   private boolean isGameOver;
 
+  private SimpleComputerPlayer computerPlayer; // Computer player
+
   public GameController(PawnsBoardModel model, PawnsBoardSwingView view) {
     this.model = model;
     this.view = view;
 
     // Initialize both players
     this.playerRed = new PlayerModel(PlayerColor.RED);
-    this.playerBlue = new PlayerModel(PlayerColor.BLUE);
+    this.computerPlayer = new SimpleComputerPlayer(PlayerColor.BLUE);
 
-    // Start with red player's turn
+    // Start with red player's turn (human player)
     this.currentPlayer = playerRed;
     this.currentPlayer.setTurn(true); // Red starts first
     this.isGameOver = false;
@@ -50,22 +53,18 @@ public class GameController {
     });
   }
 
-  // Handle card clicks (usually to play a card)
   public void handleCardClick(int cardIndex) {
     if (isGameOver) return;
 
-    // Get the card from the player's hand (for simplicity, assuming player has a hand model)
-    // You may need to adjust this to fit how your model is structured
     Card card = getCardFromPlayerHand(cardIndex);
-
     if (card != null) {
-      // Logic for placing the card on the board
-      // For example, use the model's `placeCard` method
+      // Place the card based on the current player's turn
       if (currentPlayer.getPlayerColor() == PlayerColor.RED) {
-        // Assume player is placing card in the first available empty spot
-        model.placeCard(card, 0, 1); // Example, assuming row 0, col 1 for Red Player
+        // Human player places card
+        model.placeCard(card, 0, 1); // Example, assuming row 0, col 1 for Red
       } else {
-        model.placeCard(card, 0, model.getNumCols() - 2); // Example, assuming row 0, last column for Blue Player
+        // Computer player places card
+        computerPlayer.takeTurn(model); // Let the computer take its turn
       }
 
       // Switch turn after placing card
@@ -73,20 +72,18 @@ public class GameController {
     }
   }
 
-  // Handle cell clicks (e.g., for pawn movement or card interactions)
   public void handleCellClick(int row, int col) {
     if (isGameOver) return;
 
-    // Example: Handle pawn movement or card placement on cell click
+    // Handle human player's interaction with the board
     if (model.getBoard()[row][col] instanceof Cell) {
       System.out.println("Cell clicked at (" + row + ", " + col + ")");
     }
 
-    // After the action, update the view
-    view.repaint(); // Repaint the board to reflect the changes
+    // Repaint the view to reflect changes
+    view.repaint();
   }
 
-  // Handle key presses for actions like confirming or canceling moves
   public void handleKeyPress(String key) {
     if (isGameOver) return;
 
@@ -102,35 +99,31 @@ public class GameController {
   private void switchTurn() {
     if (currentPlayer == playerRed) {
       currentPlayer.setTurn(false); // Red's turn is over
-      currentPlayer = playerBlue;  // Switch to Blue
-      currentPlayer.setTurn(true);  // Blue's turn
+      currentPlayer = computerPlayer;  // Switch to Computer (Blue)
+      currentPlayer.setTurn(true);  // Computer's turn
     } else {
-      currentPlayer.setTurn(false); // Blue's turn is over
-      currentPlayer = playerRed;    // Switch to Red
-      currentPlayer.setTurn(true);  // Red's turn
+      currentPlayer.setTurn(false); // Computer's turn is over
+      currentPlayer = playerRed;    // Switch to Red (Human)
+      currentPlayer.setTurn(true);  // Human's turn
     }
 
     System.out.println("It's " + currentPlayer.getPlayerColor() + "'s turn");
-    model.scoreTheBoard(); // Recalculate scores (could be called after each turn)
+    model.scoreTheBoard(); // Recalculate scores after each turn
   }
 
-  // Helper method to get a card from the player's hand
   private Card getCardFromPlayerHand(int cardIndex) {
-    return null; // Return the card at cardIndex from the player's hand (implement this)
+    return null; // Retrieve the card from the hand of the player
   }
 
-  // End the game
   public void endGame() {
     isGameOver = true;
     System.out.println("Game Over!");
   }
 
-  // Add a method to get the current player's color
   public PlayerColor getCurrentPlayerColor() {
     return currentPlayer.getPlayerColor();
   }
 
-  // Add a method to get the current player's model
   public PlayerModel getCurrentPlayer() {
     return currentPlayer;
   }

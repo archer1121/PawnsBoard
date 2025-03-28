@@ -35,10 +35,36 @@ public class PawnGroupCell implements Cell {
   }
 
   /**
+   * Removes pawns from the current group.
+   * @param numToRemove the number of pawns to remove
+   */
+  public void removePawns(int numToRemove) {
+    this.numPawns -= numToRemove;
+  }
+
+  /**
    * Returns the color of this pawn group.
    * @return PlayerColor
    */
   public PlayerColor getPawnColor() {
     return this.pawnColor;
+  }
+
+  /**
+   * Converts enemy pawns to the current player's color.
+   * @param newColor the new color to convert enemy pawns to
+   */
+  public void convertPawns(PlayerColor newColor) {
+    if (this.pawnColor != newColor) {
+      this.pawnColor = newColor;
+    }
+  }
+
+  /**
+   * Gets the number of pawns in this cell.
+   * @return number of pawns
+   */
+  public int getNumPawns() {
+    return this.numPawns;
   }
 }

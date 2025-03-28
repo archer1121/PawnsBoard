@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="java docs not in test yet tho">
+      <change afterPath="$PROJECT_DIR$/src/model/SimpleComputerPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PawnsBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PawnsBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PlayerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PlayerModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/cell/CardCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/CardCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/deck/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/deck/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/BoardPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/HandPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HandPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PawnsBoardSwingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PawnsBoardSwingView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PawnsBoardView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PawnsBoardView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/cell/PawnGroupCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/PawnGroupCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/cell/ScoringCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/cell/ScoringCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,53 +43,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.PawnsBoard.executor": "Run",
-    "Application.PawnsBoardGame.executor": "Run",
-    "Application.TestDeckLoader.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "JUnit.PawnsBoardModelTest.executor": "Run",
-    "JUnit.PawnsBoardTextualViewTest.executor": "Run",
-    "JUnit.TestCardCell.executor": "Run",
-    "JUnit.TestDeckLoader.executor": "Run",
-    "JUnit.TestDeckLoader.testIncompleteGrid.executor": "Run",
-    "JUnit.TestDeckLoader.testIncompleteGridSkipping.executor": "Run",
-    "JUnit.TestDeckLoader.testInvalidMetadata.executor": "Run",
-    "JUnit.TestDeckLoader.testInvalidMetadataSkipping.executor": "Run",
-    "JUnit.TestEmptyCell.executor": "Run",
-    "JUnit.TestPawnGroupCell.executor": "Coverage",
-    "JUnit.TestPawnsBoardModel.executor": "Run",
-    "JUnit.TestPawnsBoardModel.testBoardDimensions.executor": "Run",
-    "JUnit.TestPawnsBoardModel.testBoardInitializationWithMinimalSize.executor": "Run",
-    "JUnit.TestPawnsBoardModel.testPlaceCardOnEmptyCell.executor": "Run",
-    "JUnit.TestPawnsBoardModel.testPlaceCardOnOccupiedCell.executor": "Run",
-    "JUnit.TestPawnsBoardModel.testPlaceCardOnScoringCell.executor": "Run",
-    "JUnit.TestPawnsBoardModel.testPlaceCardOutOfBounds.executor": "Run",
-    "JUnit.TestPawnsBoardTextualView.executor": "Run",
-    "JUnit.TestScoringCell.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "11",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/aidan_ypururn/OneDrive/Documents/School/Spring_2025/OOD/PawnsBoard",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.PawnsBoard.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PawnsBoardGame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestDeckLoader.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JUnit.PawnsBoardModelTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PawnsBoardTextualViewTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestCardCell.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestDeckLoader.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestDeckLoader.testIncompleteGrid.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestDeckLoader.testIncompleteGridSkipping.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestDeckLoader.testInvalidMetadata.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestDeckLoader.testInvalidMetadataSkipping.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestEmptyCell.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPawnGroupCell.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.TestPawnsBoardModel.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPawnsBoardModel.testBoardDimensions.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPawnsBoardModel.testBoardInitializationWithMinimalSize.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPawnsBoardModel.testPlaceCardOnEmptyCell.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPawnsBoardModel.testPlaceCardOnOccupiedCell.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPawnsBoardModel.testPlaceCardOnScoringCell.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPawnsBoardModel.testPlaceCardOutOfBounds.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestPawnsBoardTextualView.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestScoringCell.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aidan_ypururn/OneDrive/Documents/School/Spring_2025/OOD/PawnsBoard&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\aidan_ypururn\OneDrive\Documents\School\Spring_2025\OOD\PawnsBoard\src\model\Deck" />
