@@ -91,7 +91,7 @@ public class Card {
   }
 
   /**
-   * Need this becaise cards belong to a player (color)
+   * Need this becuase cards belong to a player (color).
    * @return PlayerColor of card
    */
   public PlayerColor getPlayerColor() {
