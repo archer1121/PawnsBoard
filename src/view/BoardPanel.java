@@ -21,8 +21,8 @@ public class BoardPanel extends JPanel {
     addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(MouseEvent e) {
-        int col = e.getX() / CELL_SIZE;
-        int row = e.getY() / CELL_SIZE;
+        int row = e.getX() / CELL_SIZE;
+        int col = e.getY() / CELL_SIZE;
         if (row >= 0 && row < model.getNumRows() && col >= 0 && col < model.getNumCols()) {
           if (selectedCell != null && selectedCell.x == row && selectedCell.y == col) {
             selectedCell = null;

@@ -14,23 +14,22 @@ public class GameController {
   private final PawnsBoardModel model;
   private final PawnsBoardSwingView view;
 
-  private PlayerModel playerRed;
-  private PlayerModel playerBlue;
+  private PlayerModel player1;
+  private PlayerModel player2;
   private PlayerModel currentPlayer;
   private boolean isGameOver;
 
-  private SimpleComputerPlayer computerPlayer; // Computer player
 
   public GameController(PawnsBoardModel model, PawnsBoardSwingView view) {
     this.model = model;
     this.view = view;
 
     // Initialize both players
-    this.playerRed = new PlayerModel(PlayerColor.RED);
-    this.computerPlayer = new SimpleComputerPlayer(PlayerColor.BLUE);
+    this.player1 = new PlayerModel(PlayerColor.RED);
+    this.player2 = new SimpleComputerPlayer(PlayerColor.BLUE);
 
     // Start with red player's turn (human player)
-    this.currentPlayer = playerRed;
+    this.currentPlayer = player1;
     this.currentPlayer.setTurn(true); // Red starts first
     this.isGameOver = false;
 
@@ -64,7 +63,9 @@ public class GameController {
         model.placeCard(card, 0, 1); // Example, assuming row 0, col 1 for Red
       } else {
         // Computer player places card
-        computerPlayer.takeTurn(model); // Let the computer take its turn
+        if (player2 instanceof SimpleComputerPlayer) {
+          ((SimpleComputerPlayer) player2).takeTurn(model);
+        }
       }
 
       // Switch turn after placing card
@@ -97,13 +98,13 @@ public class GameController {
 
   // Switch turns between players
   private void switchTurn() {
-    if (currentPlayer == playerRed) {
+    if (currentPlayer == player1) {
       currentPlayer.setTurn(false); // Red's turn is over
-      currentPlayer = computerPlayer;  // Switch to Computer (Blue)
+      currentPlayer = player2;  // Switch to Computer (Blue)
       currentPlayer.setTurn(true);  // Computer's turn
     } else {
       currentPlayer.setTurn(false); // Computer's turn is over
-      currentPlayer = playerRed;    // Switch to Red (Human)
+      currentPlayer = player1;    // Switch to Red (Human)
       currentPlayer.setTurn(true);  // Human's turn
     }
 
