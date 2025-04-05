@@ -5,11 +5,20 @@ import model.deck.Card;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a player in the Pawns board game.
+ * Stores the player's color and the cards in their hand.
+ */
 public class PlayerModel {
 
   private final PlayerColor color;
   private final List<Card> hand; // List of cards in the player's hand
 
+  /**
+   * Constructs a new PlayerModel with the specified player color.
+   *
+   * @param color the color representing this player
+   */
   public PlayerModel(PlayerColor color) {
     this.color = color;
     this.hand = new ArrayList<>(); // Initialize the hand as an empty list

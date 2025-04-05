@@ -1,19 +1,31 @@
 package view;
 
-import controller.GameController;
 import model.ReadonlyPawnsBoardModel;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.swing.JLabel;
+import javax.swing.JFrame;
+import javax.swing.SwingConstants;
+import java.awt.BorderLayout;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
+/**
+ * The PawnsBoardSwingView class renders the game board and hand panel using Swing.
+ * It listens for user interactions and delegates them to a ViewListener (usually a controller).
+ */
 public class PawnsBoardSwingView extends JFrame {
-  private final ReadonlyPawnsBoardModel model;
-  private final List<ViewListener> listeners = new ArrayList<>();
-  private ViewListener controller; // Now a generic view listener
-  private JLabel statusLabel; // Label to display status messages
+  @SuppressWarnings("checkstyle:SingularField")
+  private final JLabel statusLabel; // Label to display status messages
 
+  private final ReadonlyPawnsBoardModel model;
+  private ViewListener controller; // View listener for input events
+
+  /**
+   * Constructs a Swing-based view for the Pawns board game using the given model.
+   *
+   * @param model the read-only model representing the game state
+   */
   public PawnsBoardSwingView(ReadonlyPawnsBoardModel model) {
     this.model = model;
     setTitle("Pawns Board Game");
@@ -37,12 +49,14 @@ public class PawnsBoardSwingView extends JFrame {
           controller.handleCardClick(cardIndex);
         }
       }
+
       @Override
       public void handleCellClick(int row, int col) {
         if (controller != null) {
           controller.handleCellClick(row, col);
         }
       }
+
       @Override
       public void handleKeyPress(String key) {
         if (controller != null) {
@@ -87,16 +101,21 @@ public class PawnsBoardSwingView extends JFrame {
     setVisible(true);
   }
 
+  /**
+   * Assigns the controller (listener) that will handle UI events.
+   *
+   * @param controller the ViewListener to handle input events
+   */
   public void setController(ViewListener controller) {
     this.controller = controller;
   }
 
-  // New method to update the status label
+  /**
+   * Updates the status label with a new message.
+   *
+   * @param message the message to display
+   */
   public void updateStatus(String message) {
     statusLabel.setText(message);
-  }
-
-  public void addClickListener(ViewListener listener) {
-    listeners.add(listener);
   }
 }
