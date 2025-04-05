@@ -3,129 +3,75 @@ package controller;
 import model.PawnsBoardModel;
 import model.PlayerColor;
 import model.PlayerModel;
-import model.SimpleComputerPlayer;
 import model.deck.Card;
-import model.cell.Cell;
 import view.PawnsBoardSwingView;
 import view.ViewListener;
 
-public class GameController {
+public class GameController implements ViewListener {
 
   private final PawnsBoardModel model;
   private final PawnsBoardSwingView view;
+  private final PlayerModel player; // The player this controller is responsible for
 
-  private PlayerModel player1;
-  private PlayerModel player2;
-  private PlayerModel currentPlayer;
-  private boolean isGameOver;
-
-
-  public GameController(PawnsBoardModel model, PawnsBoardSwingView view) {
+  public GameController(PawnsBoardModel model, PawnsBoardSwingView view, PlayerModel player) {
     this.model = model;
     this.view = view;
+    this.player = player;
 
-    // Initialize both players
-    this.player1 = new PlayerModel(PlayerColor.RED);
-    this.player2 = new SimpleComputerPlayer(PlayerColor.BLUE);
-
-    // Start with red player's turn (human player)
-    this.currentPlayer = player1;
-    this.currentPlayer.setTurn(true); // Red starts first
-    this.isGameOver = false;
-
-    // Register view listeners to handle user actions
-    this.view.addClickListener(new ViewListener() {
-      @Override
-      public void handleCardClick(int cardIndex) {
-        handleCardClick(cardIndex);
-      }
-
-      @Override
-      public void handleCellClick(int row, int col) {
-        handleCellClick(row, col);
-      }
-
-      @Override
-      public void handleKeyPress(String key) {
-        handleKeyPress(key);
-      }
-    });
+    // Optionally, you can still register an internal listener if needed
+    // But since this controller now implements ViewListener, it can be directly used.
   }
 
+  @Override
   public void handleCardClick(int cardIndex) {
-    if (isGameOver) return;
+    if (!playerIsActive()) return;
 
     Card card = getCardFromPlayerHand(cardIndex);
     if (card != null) {
-      // Place the card based on the current player's turn
-      if (currentPlayer.getPlayerColor() == PlayerColor.RED) {
-        // Human player places card
-        model.placeCard(card, 0, 1); // Example, assuming row 0, col 1 for Red
-      } else {
-        // Computer player places card
-        if (player2 instanceof SimpleComputerPlayer) {
-          ((SimpleComputerPlayer) player2).takeTurn(model);
-        }
+      // Example: Place the card at a specific location (adjust as per your game rules)
+      if (model.canPlaceCard(card, 0, 1)) {
+        model.placeCard(card, 0, 1);
+        switchTurn();
       }
-
-      // Switch turn after placing card
-      switchTurn();
     }
   }
 
+  @Override
   public void handleCellClick(int row, int col) {
-    if (isGameOver) return;
-
-    // Handle human player's interaction with the board
-    if (model.getBoard()[row][col] instanceof Cell) {
-      System.out.println("Cell clicked at (" + row + ", " + col + ")");
-    }
-
-    // Repaint the view to reflect changes
+    if (!playerIsActive()) return;
+    System.out.println("Player " + player.getPlayerColor() + " clicked cell (" + row + ", " + col + ")");
     view.repaint();
   }
 
+  @Override
   public void handleKeyPress(String key) {
-    if (isGameOver) return;
-
+    if (!playerIsActive()) return;
     if ("Confirm".equals(key)) {
-      System.out.println("Move confirmed");
+      System.out.println("Player " + player.getPlayerColor() + " confirmed move");
       switchTurn();
     } else if ("Cancel".equals(key)) {
-      System.out.println("Move canceled");
+      System.out.println("Player " + player.getPlayerColor() + " canceled move");
+      // Clear any temporary selections if needed
     }
   }
 
-  // Switch turns between players
+  // Helper: Determines if it's this player's turn (placeholder logic)
+  private boolean playerIsActive() {
+    // In a complete implementation, check with the model's turn state.
+    return true;
+  }
+
+  // Helper: Switch turn logic (placeholder)
   private void switchTurn() {
-    if (currentPlayer == player1) {
-      currentPlayer.setTurn(false); // Red's turn is over
-      currentPlayer = player2;  // Switch to Computer (Blue)
-      currentPlayer.setTurn(true);  // Computer's turn
-    } else {
-      currentPlayer.setTurn(false); // Computer's turn is over
-      currentPlayer = player1;    // Switch to Red (Human)
-      currentPlayer.setTurn(true);  // Human's turn
-    }
-
-    System.out.println("It's " + currentPlayer.getPlayerColor() + "'s turn");
-    model.scoreTheBoard(); // Recalculate scores after each turn
+    System.out.println("Switching turn from " + player.getPlayerColor());
+    // Implement your turn switching logic here.
   }
 
+  // Helper: Retrieve card from player's hand
   private Card getCardFromPlayerHand(int cardIndex) {
-    return null; // Retrieve the card from the hand of the player
-  }
-
-  public void endGame() {
-    isGameOver = true;
-    System.out.println("Game Over!");
-  }
-
-  public PlayerColor getCurrentPlayerColor() {
-    return currentPlayer.getPlayerColor();
-  }
-
-  public PlayerModel getCurrentPlayer() {
-    return currentPlayer;
+    if (cardIndex >= 0 && cardIndex < player.getHand().size()) {
+      return player.getHand().get(cardIndex);
+    }
+    return null;
   }
 }

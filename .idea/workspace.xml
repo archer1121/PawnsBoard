@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="java docs not in test yet tho">
+      <change afterPath="$PROJECT_DIR$/src/controller/CompositeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PawnsBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PawnsBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/BoardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PawnsBoardSwingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PawnsBoardSwingView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +31,8 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
-    &quot;associatedIndex&quot;: 3
-    }</component>
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2uH9dDb7orOtYffWxfShVk53CUT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -155,8 +156,6 @@
       <workItem from="1741904826758" duration="4798000" />
       <workItem from="1742923632532" duration="1965000" />
       <workItem from="1742941786255" duration="1860000" />
-      <workItem from="1743196750220" duration="34000" />
-      <workItem from="1743704754320" duration="1944000" />
     </task>
     <task id="LOCAL-00001" summary="stephen branch last commit">
       <option name="closed" value="true" />

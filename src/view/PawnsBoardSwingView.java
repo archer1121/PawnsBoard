@@ -16,7 +16,7 @@ public class PawnsBoardSwingView extends JFrame {
   private final List<ViewListener> listeners = new ArrayList<>();
   private int selectedCardIndex = -1;
   private Point selectedCell = null;
-  private GameController controller; // Add controller reference
+  private ViewListener controller; // Add controller reference
 
   /**
    * Our main view using java swing
@@ -94,8 +94,8 @@ public class PawnsBoardSwingView extends JFrame {
   }
 
   // Set the GameController to integrate it with the view
-  public void setController(GameController controller) {
-    this.controller = controller; // Store the controller reference
+  public void setController(ViewListener controller) {
+    this.controller = controller;
   }
 
   /**
