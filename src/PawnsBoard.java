@@ -21,15 +21,16 @@ public class PawnsBoard {
     PlayerModel redPlayer = new PlayerModel(PlayerColor.RED);
     SimpleComputerPlayer bluePlayer = new SimpleComputerPlayer(PlayerColor.BLUE);
 
-    // Create controllers for each player, each with access to the shared view
+    // Create controllers for each player
     GameController redController = new GameController(model, view, redPlayer);
     GameController blueController = new GameController(model, view, bluePlayer);
 
-    // Create a composite controller that forwards view events to both controllers
+    // (Optional) If you need a composite controller:
     CompositeController compositeController = new CompositeController(redController, blueController);
-
-    // Set the composite controller as the view's controller (which is a ViewListener)
     view.setController(compositeController);
+
+    // Start the game after all listeners are registered
+    model.startGame();
 
     view.setVisible(true);
   }

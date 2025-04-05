@@ -8,25 +8,22 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Graphical view for the PawnsBoard game.
- */
 public class PawnsBoardSwingView extends JFrame {
   private final ReadonlyPawnsBoardModel model;
   private final List<ViewListener> listeners = new ArrayList<>();
-  private int selectedCardIndex = -1;
-  private Point selectedCell = null;
-  private ViewListener controller; // Add controller reference
+  private ViewListener controller; // Now a generic view listener
+  private JLabel statusLabel; // Label to display status messages
 
-  /**
-   * Our main view using java swing
-   * @param model of game already init
-   */
   public PawnsBoardSwingView(ReadonlyPawnsBoardModel model) {
     this.model = model;
     setTitle("Pawns Board Game");
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setSize(800, 600);
+
+    // Create a status label at the top
+    statusLabel = new JLabel("Welcome to Pawns Board Game");
+    statusLabel.setHorizontalAlignment(SwingConstants.CENTER);
+    add(statusLabel, BorderLayout.NORTH);
 
     BoardPanel boardPanel = new BoardPanel(this.model);
     add(boardPanel, BorderLayout.CENTER);
@@ -37,19 +34,19 @@ public class PawnsBoardSwingView extends JFrame {
       @Override
       public void handleCardClick(int cardIndex) {
         if (controller != null) {
-          controller.handleCardClick(cardIndex); // Delegate to controller
+          controller.handleCardClick(cardIndex);
         }
       }
       @Override
       public void handleCellClick(int row, int col) {
         if (controller != null) {
-          controller.handleCellClick(row, col); // Delegate to controller
+          controller.handleCellClick(row, col);
         }
       }
       @Override
       public void handleKeyPress(String key) {
         if (controller != null) {
-          controller.handleKeyPress(key); // Delegate to controller
+          controller.handleKeyPress(key);
         }
       }
     });
@@ -62,9 +59,8 @@ public class PawnsBoardSwingView extends JFrame {
         int cellSize = Math.min(getWidth() / model.getNumCols(), getHeight() / model.getNumRows());
         int col = e.getX() / cellSize;
         int row = e.getY() / cellSize;
-        selectedCell = new Point(col, row);
         if (controller != null) {
-          controller.handleCellClick(row, col); // Delegate to controller
+          controller.handleCellClick(row, col);
         }
         repaint();
       }
@@ -76,44 +72,31 @@ public class PawnsBoardSwingView extends JFrame {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
           if (controller != null) {
-            controller.handleKeyPress("Confirm"); // Notify controller for confirmation
+            controller.handleKeyPress("Confirm");
           }
         } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
           if (controller != null) {
-            controller.handleKeyPress("Cancel"); // Notify controller for cancellation
+            controller.handleKeyPress("Cancel");
           }
-          selectedCardIndex = -1;
-          selectedCell = null;
           repaint();
         }
       }
     });
 
     setFocusable(true);
-    setVisible(true); // This ensures the window is displayed.
+    setVisible(true);
   }
 
-  // Set the GameController to integrate it with the view
   public void setController(ViewListener controller) {
     this.controller = controller;
   }
 
-  /**
-   * Registers a listener for view events.
-   */
+  // New method to update the status label
+  public void updateStatus(String message) {
+    statusLabel.setText(message);
+  }
+
   public void addClickListener(ViewListener listener) {
     listeners.add(listener);
-  }
-
-  private void notifyCellClick(int row, int col) {
-    for (ViewListener listener : listeners) {
-      listener.handleCellClick(row, col);
-    }
-  }
-
-  private void notifyKeyPress(String key) {
-    for (ViewListener listener : listeners) {
-      listener.handleKeyPress(key);
-    }
   }
 }
