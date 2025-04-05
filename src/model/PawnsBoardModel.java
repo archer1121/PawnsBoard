@@ -34,6 +34,15 @@ public class PawnsBoardModel implements Board {
     return this.board;
   }
 
+  /**
+   * Returns player color for use in controller.
+   * @return Player
+   */
+  public PlayerColor getCurrentPlayerColor() {
+    return currentPlayerColor;
+  }
+
+
   @Override
   public int getNumCols() {
     checkBoardInitialized();
