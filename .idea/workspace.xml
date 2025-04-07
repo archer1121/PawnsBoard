@@ -9,17 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="now it displays whos turn it is">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PawnsBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PawnsBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/CompositeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CompositeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PawnsBoardModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PlayerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/PlayerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/SimpleComputerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SimpleComputerPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/BoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/BoardPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PawnsBoardSwingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PawnsBoardSwingView.java" afterDir="false" />
-    </list>
+    <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="now it displays whos turn it is" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
