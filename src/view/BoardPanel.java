@@ -1,20 +1,36 @@
 package view;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import model.ReadonlyPawnsBoardModel;
 import model.cell.CardCell;
 import model.cell.Cell;
-import model.cell.PawnGroupCell;
 import model.cell.ScoringCell;
 
+/**
+ * A panel representing the game board in the Pawns game GUI.
+ * It draws the cells, handles mouse clicks, and displays the current board state.
+ */
 public class BoardPanel extends JPanel {
   private static final int CELL_SIZE = 60;
   private final ReadonlyPawnsBoardModel model;
   private ViewListener listener;
   private Point selectedCell = null;
 
+  /**
+   * Constructs a BoardPanel using a read-only game model.
+   *
+   * @param model the read-only model representing the board state
+   */
   public BoardPanel(ReadonlyPawnsBoardModel model) {
     this.model = model;
     setBackground(Color.WHITE);
@@ -29,7 +45,9 @@ public class BoardPanel extends JPanel {
           } else {
             selectedCell = new Point(row, col);
           }
-          if (listener != null) listener.handleCellClick(row, col);
+          if (listener != null) {
+            listener.handleCellClick(row, col);
+          }
           repaint();
         }
       }
@@ -67,29 +85,25 @@ public class BoardPanel extends JPanel {
         g2d.drawRect(x, y, cellSize, cellSize);
 
         // Draw player color circles on left and right sections
-        if (c == 1) { // Check if the row is in the first row (Red Player's side)
-            // Red side: Draw red circle
-            g2d.setColor(Color.RED);
-            g2d.fillOval(x + (cellSize / 4), y + (cellSize / 4), cellSize / 2, cellSize / 2);
-        } else if (c == numCols - 2) { // Check if the row is in the second last row (Blue Player's side)
-            // Blue side: Draw blue circle
-            g2d.setColor(Color.BLUE);
-            g2d.fillOval(x + (cellSize / 4), y + (cellSize / 4), cellSize / 2, cellSize / 2);
+        if (c == 1) {
+          g2d.setColor(Color.RED);
+          g2d.fillOval(x + (cellSize / 4), y + (cellSize / 4), cellSize / 2, cellSize / 2);
+        } else if (c == numCols - 2) {
+          g2d.setColor(Color.BLUE);
+          g2d.fillOval(x + (cellSize / 4), y + (cellSize / 4), cellSize / 2, cellSize / 2);
         }
 
         // Draw cell text (e.g., score)
         if (!cellString.equals("")) {
-          Font font = new Font("Arial", Font.BOLD, 30); // Set a larger font size (16 is an example, adjust as needed)
+          Font font = new Font("Arial", Font.BOLD, 30);
           g2d.setFont(font);
 
-          // Calculate the string width and height for centering
           FontMetrics fontMetrics = g2d.getFontMetrics();
           int textWidth = fontMetrics.stringWidth(cellString);
           int textHeight = fontMetrics.getHeight();
 
-          // Calculate the position to center the text
-          int xPos = x + (cellSize - textWidth) / 2; // Center horizontally
-          int yPos = y + (cellSize + textHeight) / 2 - fontMetrics.getDescent(); // Center vertically
+          int xPos = x + (cellSize - textWidth) / 2;
+          int yPos = y + (cellSize + textHeight) / 2 - fontMetrics.getDescent();
 
           g2d.drawString(cellString, xPos, yPos);
         }
@@ -105,13 +119,15 @@ public class BoardPanel extends JPanel {
     }
   }
 
-  @Override public Dimension getPreferredSize() {
+  @Override
+  public Dimension getPreferredSize() {
     return new Dimension(model.getNumCols() * CELL_SIZE, model.getNumRows() * CELL_SIZE);
   }
 
   /**
-   * Init viewlistener
-   * @param listener for click handling
+   * Sets the ViewListener that will handle cell click events.
+   *
+   * @param listener the listener to set
    */
   public void setClickListener(ViewListener listener) {
     this.listener = listener;

@@ -66,7 +66,7 @@ public class PawnsBoardModel implements Board {
   public void initBoard(int rows, int cols) {
     if (rows < 1 || cols < 3 || cols % 2 == 0) {
       throw new IllegalArgumentException("Invalid board dimensions: must have at " +
-              "least 1 row and an odd number of playable columns (≥3).");
+          "least 1 row and an odd number of playable columns (≥3).");
     }
 
     this.board = new Cell[rows][cols + 2]; // +2 for scoring columns
@@ -120,7 +120,7 @@ public class PawnsBoardModel implements Board {
         int affectedRow = row + (i - 2);
         int affectedCol = col + (j - 2);
         if (affectedRow >= 0 && affectedRow < board.length &&
-                affectedCol >= 0 && affectedCol < board[0].length) {
+            affectedCol >= 0 && affectedCol < board[0].length) {
           Cell affectedCell = board[affectedRow][affectedCol];
           if (influenceGrid[i][j] == '#') {
             if (affectedCell instanceof PawnGroupCell) {
@@ -165,9 +165,20 @@ public class PawnsBoardModel implements Board {
     }
   }
 
+  /**
+   * Checks if the player can place a card at the specified position on the board.
+   * This method evaluates if the given cell is a valid cell and if the player
+   * has enough pawns to place the card in the specified row and column.
+   *
+   * @param card the card to be placed.
+   * @param row the row (starting at index 0) where the card is to be placed.
+   * @param col the column (starting at index 0) where the card is to be placed.
+   * @return {@code true} if the card can be placed at the given position, {@code false} otherwise.
+   */
   public boolean canPlaceCard(Card card, int row, int col) {
     Cell cell = getBoard()[row][col];
-    return (cell instanceof Cell) && hasPawnsToPlace(card, row, col);
+    return (cell instanceof Cell) &&
+        hasPawnsToPlace(card, row, col);
   }
 
   private boolean hasPawnsToPlace(Card card, int row, int col) {
@@ -213,7 +224,8 @@ public class PawnsBoardModel implements Board {
    * Switches the turn and notifies listeners.
    */
   public void switchTurn() {
-    currentPlayerColor = (currentPlayerColor == PlayerColor.RED) ? PlayerColor.BLUE : PlayerColor.RED;
+    currentPlayerColor = (currentPlayerColor == PlayerColor.RED) ?
+        PlayerColor.BLUE : PlayerColor.RED;
     scoreTheBoard(); // Recalculate scores after the turn switch
     notifyTurnChanged();
   }
