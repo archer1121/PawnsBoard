@@ -17,10 +17,11 @@ public class DeckLoader {
    * Loads a deck of cards from a given file path.
    *
    * @param filePath The path to the deck configuration file.
+   * @param red
    * @return A list of Card objects loaded from the file.
    * @throws FileNotFoundException If the file cannot be found.
    */
-  public static List<Card> loadDeck(String filePath) throws FileNotFoundException {
+  public static List<Card> loadDeck(String filePath, PlayerColor red) throws FileNotFoundException {
     List<Card> deck = new ArrayList<>(); // List to store loaded cards
     File file = new File(filePath);
 

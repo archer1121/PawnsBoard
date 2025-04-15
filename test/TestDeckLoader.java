@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import model.PlayerColor;
 import model.deck.DeckLoader;
 import model.deck.Card;
 
@@ -16,7 +17,7 @@ class TestDeckLoader {
   @Test
   void testValidDeck() {
     try {
-      List<Card> deck = DeckLoader.loadDeck("docs/valid_deck.config");
+      List<Card> deck = DeckLoader.loadDeck("docs/valid_deck.config", PlayerColor.RED);
       assertEquals(3, deck.size(), "Loaded deck should have 3 cards.");
     } catch (FileNotFoundException e) {
       fail("File not found: " + e.getMessage());
@@ -26,7 +27,7 @@ class TestDeckLoader {
   @Test
   void testValidDeckContent() {
     try {
-      List<Card> deck = DeckLoader.loadDeck("docs/valid_deck.config");
+      List<Card> deck = DeckLoader.loadDeck("docs/valid_deck.config", PlayerColor.RED);
       Card card = deck.get(0);
       assertEquals("Fireball", card.getName());
       assertEquals(3, card.getCost());
@@ -40,7 +41,7 @@ class TestDeckLoader {
   @Test
   void testInvalidMetadata() {
     try {
-      List<Card> deck = DeckLoader.loadDeck("docs/invalid_metadata.config");
+      List<Card> deck = DeckLoader.loadDeck("docs/invalid_metadata.config", PlayerColor.RED);
       assertEquals(1, deck.size(), "Only valid cards should be loaded.");
     } catch (FileNotFoundException e) {
       fail("File not found: " + e.getMessage());
@@ -51,7 +52,7 @@ class TestDeckLoader {
   @Test
   void testMissingCInGrid() {
     try {
-      List<Card> deck = DeckLoader.loadDeck("docs/missing_C_in_grid.config");
+      List<Card> deck = DeckLoader.loadDeck("docs/missing_C_in_grid.config", PlayerColor.RED);
       assertTrue(deck.isEmpty(), "Deck should be empty due to missing 'C' in the grid.");
     } catch (FileNotFoundException e) {
       fail("File not found: " + e.getMessage());
@@ -61,7 +62,7 @@ class TestDeckLoader {
   @Test
   void testMissingCInGridSkipping() {
     try {
-      List<Card> deck = DeckLoader.loadDeck("docs/missing_C_in_grid.config");
+      List<Card> deck = DeckLoader.loadDeck("docs/missing_C_in_grid.config", PlayerColor.RED);
       assertEquals(0, deck.size(), "Deck should not contain cards due to missing 'C' at (2,2).");
     } catch (FileNotFoundException e) {
       fail("File not found: " + e.getMessage());
@@ -72,7 +73,7 @@ class TestDeckLoader {
   @Test
   void testIncompleteGrid() {
     try {
-      List<Card> deck = DeckLoader.loadDeck("docs/incomplete_grid.config");
+      List<Card> deck = DeckLoader.loadDeck("docs/incomplete_grid.config", PlayerColor.RED);
       assertEquals(0, deck.size(), "Deck should have 1 valid card.");
     } catch (FileNotFoundException e) {
       fail("File not found: " + e.getMessage());
@@ -82,7 +83,7 @@ class TestDeckLoader {
   @Test
   void testIncompleteGridSkipping() {
     try {
-      List<Card> deck = DeckLoader.loadDeck("docs/incomplete_grid.config");
+      List<Card> deck = DeckLoader.loadDeck("docs/incomplete_grid.config", PlayerColor.RED);
       assertTrue(deck.isEmpty(), "Incomplete cards should be skipped.");
     } catch (FileNotFoundException e) {
       fail("File not found: " + e.getMessage());
@@ -93,7 +94,7 @@ class TestDeckLoader {
   @Test
   void testEmptyDeck() {
     try {
-      List<Card> deck = DeckLoader.loadDeck("docs/empty_deck.config");
+      List<Card> deck = DeckLoader.loadDeck("docs/empty_deck.config", PlayerColor.RED);
       assertTrue(deck.isEmpty(), "Deck should be empty.");
     } catch (FileNotFoundException e) {
       fail("File not found: " + e.getMessage());
@@ -103,7 +104,7 @@ class TestDeckLoader {
   @Test
   void testEmptyDeckSkipping() {
     try {
-      List<Card> deck = DeckLoader.loadDeck("docs/empty_deck.config");
+      List<Card> deck = DeckLoader.loadDeck("docs/empty_deck.config", PlayerColor.RED);
       assertEquals(0, deck.size(), "Deck should have no cards.");
     } catch (FileNotFoundException e) {
       fail("File not found: " + e.getMessage());
