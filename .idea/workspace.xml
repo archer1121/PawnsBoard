@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="now it displays whos turn it is" />
+    <list default="true" id="0e345863-65f9-404e-9d50-f297349db72d" name="Changes" comment="xml">
+      <change afterPath="$PROJECT_DIR$/src/adapter/PawnsBoardModelAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/adapter/ProviderPlayerAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/providerCode/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -87,6 +92,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/providerCode" />
       <recent name="C:\Users\aidan_ypururn\OneDrive\Documents\School\Spring_2025\OOD\PawnsBoard\src\model\Deck" />
     </key>
   </component>
@@ -206,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743875841925</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="xml">
+      <option name="closed" value="true" />
+      <created>1744055082169</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744055082169</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +235,8 @@
     <MESSAGE value="java docs not in test yet tho" />
     <MESSAGE value="separate controllers for both players now" />
     <MESSAGE value="now it displays whos turn it is" />
-    <option name="LAST_COMMIT_MESSAGE" value="now it displays whos turn it is" />
+    <MESSAGE value="xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="xml" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PawnsBoard$TestPawnGroupCell.ic" NAME="TestPawnGroupCell Coverage Results" MODIFIED="1741911257577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
